@@ -16,4 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return array_values(\App\Enums\InstructionalLevel::cases());
 });
-

@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -13,21 +13,34 @@ class Course extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-
+        'category_id',
+        'user_id',
+        'name',
+        'slug',
+        'subtitle',
+        'description',
+        'level',
+        'price',
+        'trailer',
     ];
 
-    public function category(): MorphOne
+    public function user(): BelongsTo
     {
-        return $this->morphOne(Category::class, 'categorizable');
+        return $this->belongsTo(User::class);
     }
 
-    public function requirements(): HasMany
+    public function category(): BelongsTo
     {
-        return $this->hasMany(CourseRequirement::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function learnGoals(): HasMany
     {
         return $this->hasMany(CourseLearnGoal::class);
+    }
+
+    public function requirements(): HasMany
+    {
+        return $this->hasMany(CourseRequirement::class);
     }
 }

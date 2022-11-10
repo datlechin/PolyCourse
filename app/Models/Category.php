@@ -3,21 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model implements HasMedia
+class Category extends Model
 {
-    use InteractsWithMedia;
-
     protected $fillable = [
         'name',
         'slug',
+        'description',
     ];
 
-    public function categorizable(): MorphTo
+    public function posts(): HasMany
     {
-        return $this->morphTo();
+        return $this->hasMany(Post::class);
+    }
+
+    public function courses(): HasMany
+    {
+        return $this->hasMany(Course::class);
     }
 }
