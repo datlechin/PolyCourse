@@ -13,6 +13,8 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
+        Category::truncate();
+
         $categories = [
             'Lập trình web',
             'Khoa học dữ liệu',
@@ -24,6 +26,7 @@ class CategorySeeder extends Seeder
             Category::create([
                 'name' => $category,
                 'slug' => Str::slug($category),
+                'description' => fake()->realText(),
             ]);
         }
     }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
@@ -18,6 +19,11 @@ class Post extends Model implements HasMedia
         'slug',
         'excerpt',
         'content',
+        'views',
+    ];
+
+    protected $casts = [
+        'views' => 'integer',
     ];
 
     public function user(): BelongsTo
@@ -28,5 +34,10 @@ class Post extends Model implements HasMedia
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function scopePopular(Builder $query): Builder
+    {
+        return $query->orderByDesc('views');
     }
 }
