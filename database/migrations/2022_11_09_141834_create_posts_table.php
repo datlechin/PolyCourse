@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('excerpt')->nullable();
             $table->text('content');
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="bg-gray-500">
+    <div>
         <CourseList :courses="courses" />
         <PostList :posts="posts" />
     </div>

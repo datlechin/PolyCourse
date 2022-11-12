@@ -1,22 +1,28 @@
-<script>
-import PostItem from "@/components/PostItem.vue";
+<script setup>
+import { Link } from '@inertiajs/inertia-vue3'
+import { ChevronRightIcon } from "@heroicons/vue/24/outline"
+import PostItem from "@/components/PostItem.vue"
 
-export default {
-    components: {
-        PostItem,
-    },
-    props: {
-        posts: Array,
-    }
-}
+defineProps({
+    posts: Array,
+})
 </script>
 
 <template>
     <div>
-        <PostItem
-            v-for="(post, index) in posts"
-            :key="index"
-            :post="post"
-        />
+        <div class="flex justify-between py-4">
+            <h2 class="font-bold text-2xl">Bài viết nổi bật</h2>
+            <Link href="" class="flex items-center text-blue-500 font-semibold hover:underline">
+                Xem tất cả
+                <ChevronRightIcon class="w-4 h-4" />
+            </Link>
+        </div>
+        <div class="grid grid-cols-4 gap-6">
+            <PostItem
+                v-for="(post, index) in posts"
+                :key="index"
+                :post="post"
+            />
+        </div>
     </div>
 </template>

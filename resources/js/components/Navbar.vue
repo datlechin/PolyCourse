@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <nav class="flex items-center justify-between h-[66px] border-b px-7">
+    <nav class="bg-white flex items-center justify-between h-[66px] border-b px-7">
         <div class="flex items-center">
             <Link href="/">
                 <img src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="Logo" class="w-[38px] rounded-lg">

@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-    <div class="sticky px-3">
+    <div class="px-3">
         <ul>
             <li
                 v-for="(item, index) in items"

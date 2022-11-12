@@ -14,9 +14,9 @@ export default {
 
 <template>
     <Header />
-    <div class="flex h-screen mt-3">
+    <div class="flex mt-3">
         <Sidebar />
-        <main>
+        <main class="w-full px-20 mb-20">
             <slot />
         </main>
     </div>
