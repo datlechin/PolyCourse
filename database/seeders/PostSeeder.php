@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostSeeder extends Seeder
@@ -63,13 +64,17 @@ class PostSeeder extends Seeder
             ],
         ];
 
-        foreach ($posts as $post) {
-            Post::create([
-                ...$post,
+        for ($i = 0; $i < count($posts); $i++) {
+            $post = Post::create([
+                ...$posts[$i],
                 'user_id' => rand(1, $usersCount),
                 'category_id' => rand(1, $categoriesCount),
-                'slug' => Str::slug($post['title']),
+                'slug' => Str::slug($posts[$i]['title']),
             ]);
+
+            $post
+                ->addMedia(Storage::disk('public')->path('posts/post-' . $i + 1 . '.png'))
+                ->toMediaCollection();
         }
     }
 }
