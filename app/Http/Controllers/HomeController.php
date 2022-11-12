@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Post;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,7 @@ class HomeController extends Controller
             ->limit(8)
             ->get();
 
-        return inertia('Home', [
+        return Inertia::render('Home', [
             'courses' => $courses,
             'posts' => $posts,
         ]);
