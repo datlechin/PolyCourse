@@ -18,15 +18,30 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'name' => 'Ngô Quốc Đạt',
-                'username' => 'ngoquocdat',
+                'username' => 'quocdat',
                 'email' => 'datlechin@gmail.com',
-            ]
+            ],
+            [
+                'name' => 'Huỳnh Kim Phú',
+                'username' => 'kimphu',
+                'email' => 'phuhkps25439@fpt.edu.vn',
+            ],
+            [
+                'name' => 'Nguyễn Đức Lập',
+                'username' => 'duclapp',
+                'email' => 'lapndps24157@fpt.edu.vn',
+            ],
+            [
+                'name' => 'Phạm Ngọc Đạt',
+                'username' => 'ngocdat',
+                'email' => 'datpnps24143@fpt.edu.vn',
+            ],
         ];
 
         foreach ($users as $user) {
             User::create([
                 ...$user,
-                'password' => bcrypt('123456'),
+                'password' => Hash::make('123456'),
                 'phone' => fake()->e164PhoneNumber(),
                 'bio' => fake()->realText(),
                 'email_verified_at' => now(),
