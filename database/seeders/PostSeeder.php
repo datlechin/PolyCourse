@@ -60,7 +60,7 @@ class PostSeeder extends Seeder
                 'title' => 'Học như thế nào là phù hợp ?',
                 'excerpt' => 'Hôm nay mình có quay một video trong khóa học ReactJS là “Tạo dự án ReactJS với Webpack và Babel”.',
                 'content' => 'Hôm nay mình có quay một video trong khóa học ReactJS là “Tạo dự án ReactJS với Webpack và Babel”. Mình làm video này với mong muốn chia sẻ cho các bạn có thể hình dung ra dự án được tạo bởi “create-react-app” được xây dựng như thế nào. Các bạn có thể xem thêm video hướng dẫn ở đây nhé.',
-            ]
+            ],
         ];
 
         foreach ($posts as $post) {

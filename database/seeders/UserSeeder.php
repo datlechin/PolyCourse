@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Ngô Quốc Đạt',
                 'username' => 'quocdat',
-                'email' => 'datlechin@gmail.com',
+                'email' => 'datnqpd05994@fpt.edu.vn',
             ],
             [
                 'name' => 'Huỳnh Kim Phú',
