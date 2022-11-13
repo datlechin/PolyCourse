@@ -73,8 +73,8 @@ class PostSeeder extends Seeder
             ]);
 
             $post
-                ->addMedia(Storage::disk('public')->path('posts/post-' . $i + 1 . '.png'))
-                ->toMediaCollection();
+                ->addMedia(Storage::disk('public')->path('posts/'.$i + 1 .'.png'))
+                ->toMediaCollection('posts');
         }
     }
 }

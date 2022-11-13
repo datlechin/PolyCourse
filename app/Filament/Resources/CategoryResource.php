@@ -38,12 +38,12 @@ class CategoryResource extends Resource
                         ->label('Tên')
                         ->required()
                         ->reactive()
-                        ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
+                        ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
 
                     TextInput::make('slug')
                         ->disabled()
                         ->required()
-                        ->unique(Category::class, 'slug', fn($record) => $record),
+                        ->unique(Category::class, 'slug', fn ($record) => $record),
 
                     MarkdownEditor::make('description')
                         ->label('Mô tả')
@@ -55,13 +55,13 @@ class CategoryResource extends Resource
 
                     Placeholder::make('created_at')
                         ->label('Tạo lúc')
-                        ->content(fn(?Category $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                        ->content(fn (?Category $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                     Placeholder::make('updated_at')
                         ->label('Cập nhật lúc')
-                        ->content(fn(?Category $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                        ->content(fn (?Category $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
                 ])
-                ->columns()
+                ->columns(),
             ]);
     }
 
@@ -80,7 +80,7 @@ class CategoryResource extends Resource
                 TextColumn::make('created_at')
                     ->label('Ngày tạo')
                     ->date()
-                    ->sortable()
+                    ->sortable(),
             ]);
     }
 

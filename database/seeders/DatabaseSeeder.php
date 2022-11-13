@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
 
         $this->uploadFiles('posts');
+        $this->uploadFiles('courses');
 
         $this->call([
             UserSeeder::class,
@@ -30,9 +31,9 @@ class DatabaseSeeder extends Seeder
 
     protected function uploadFiles(string $folder): void
     {
-        $path = database_path('seeders/files/' . $folder);
+        $path = database_path('seeders/files/'.$folder);
 
-        if (!is_dir($path)) {
+        if (! is_dir($path)) {
             return;
         }
 
@@ -43,7 +44,7 @@ class DatabaseSeeder extends Seeder
                 continue;
             }
 
-            Storage::disk('public')->putFileAs($folder, new SplFileInfo($path . '/' . $file), $file);
+            Storage::disk('public')->putFileAs($folder, new SplFileInfo($path.'/'.$file), $file);
         }
     }
 }

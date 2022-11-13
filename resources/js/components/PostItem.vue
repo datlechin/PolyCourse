@@ -9,7 +9,7 @@ defineProps({
 <template>
     <div>
         <Link :href="`/blog/${post.slug}`">
-            <img :src="post.media[0].original_url" :alt="post.title" class="w-full rounded-[16px]">
+            <img :src="post.thumbnail_url" :alt="post.title" class="w-full rounded-[16px]">
         </Link>
         <h3 class="font-semibold truncate my-3">
             <Link :href="`/blog/${post.slug}`" v-text="post.title" />

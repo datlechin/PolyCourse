@@ -37,12 +37,12 @@ class CoursesRelationManager extends RelationManager
                 TextInput::make('name')
                     ->required()
                     ->reactive()
-                    ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
+                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
 
                 TextInput::make('slug')
                     ->disabled()
                     ->required()
-                    ->unique(Course::class, 'slug', fn($record) => $record),
+                    ->unique(Course::class, 'slug', fn ($record) => $record),
 
                 TextInput::make('subtitle')
                     ->required(),
@@ -62,11 +62,11 @@ class CoursesRelationManager extends RelationManager
 
                 Placeholder::make('created_at')
                     ->label('Created Date')
-                    ->content(fn(?Course $record): string => $record?->created_at?->diffForHumans() ?? '-'),
+                    ->content(fn (?Course $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                 Placeholder::make('updated_at')
                     ->label('Last Modified Date')
-                    ->content(fn(?Course $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                    ->content(fn (?Course $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
             ]);
     }
 
