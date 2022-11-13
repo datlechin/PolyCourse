@@ -18,6 +18,8 @@ class PostController extends Controller
             ->with('user')
             ->firstOrFail();
 
+        $post->increment('views');
+
         return Inertia::render('Post', [
             'post' => $post,
         ]);

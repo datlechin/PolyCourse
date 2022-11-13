@@ -1,4 +1,6 @@
 <script setup>
+import { Link } from '@inertiajs/inertia-vue3'
+import { ChevronRightIcon } from "@heroicons/vue/24/outline"
 import CourseItem from "@/components/CourseItem.vue";
 
 defineProps({
@@ -8,10 +10,19 @@ defineProps({
 
 <template>
     <div>
-        <CourseItem
-            v-for="(course, index) in courses"
-            :key="index"
-            :course="course"
-        />
+        <div class="flex justify-between py-4">
+            <h2 class="font-bold text-2xl">Khoá học</h2>
+            <Link href="" class="flex items-center text-blue-500 font-semibold hover:underline">
+                Xem tất cả
+                <ChevronRightIcon class="w-4 h-4" />
+            </Link>
+        </div>
+        <div class="grid grid-cols-4 gap-6">
+            <CourseItem
+                v-for="(course, index) in courses"
+                :key="index"
+                :course="course"
+            />
+        </div>
     </div>
 </template>
