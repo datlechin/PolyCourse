@@ -9,16 +9,16 @@ defineProps({
 <template>
     <div>
         <Link :href="`/blog/${post.slug}`">
-            <img :src="post.media[0].original_url" :alt="post.title" class="h-32 w-full rounded-[16px]">
+            <img :src="post.media[0].original_url" :alt="post.title" class="w-full rounded-[16px]">
         </Link>
-        <h3 class="font-semibold text-sm truncate my-3">
+        <h3 class="font-semibold truncate my-3">
             <Link :href="`/blog/${post.slug}`" v-text="post.title" />
         </h3>
         <div class="flex items-center text-sm">
             <Link>
                 <img :src="post.user.avatar_url" :alt="post.user.name" class="rounded-full w-5 h-5 mr-2" />
             </Link>
-            <Link class="text-xs">
+            <Link>
                 <strong class="text-gray-600" v-text="post.user.name" />
                 <span class="mx-2">·</span>
                 <span class="text-gray-400">6 phút đọc</span>
