@@ -2,23 +2,23 @@
 
 namespace App\Enums;
 
-enum InstructionalLevel: int
+enum InstructionalLevel: string
 {
-    case BEGINNER = 1;
+    case Beginner = 'beginner';
 
-    case INTERMEDIATE = 2;
+    case Intermediate = 'intermediate';
 
-    case EXPERT = 3;
+    case Expert = 'expert';
 
-    case ALL = 4;
+    case All = 'all';
 
     public function label(): string
     {
         return match ($this) {
-            self::BEGINNER => 'Trình độ cơ bản',
-            self::INTERMEDIATE => 'Trình độ trung bình',
-            self::EXPERT => 'Trình độ nâng cao',
-            self::ALL => 'Tất cả',
+            self::Beginner => 'Trình độ cơ bản',
+            self::Intermediate => 'Trình độ trung bình',
+            self::Expert => 'Trình độ nâng cao',
+            self::All => 'Tất cả',
         };
     }
 }

@@ -20,7 +20,7 @@ class CourseController extends Controller
     {
         $course = Course::query()
             ->where('slug', $slug)
-            ->with('user')
+            ->with(['user', 'learnGoals', 'requirements'])
             ->firstOrFail();
 
         return Inertia::render('Courses/Show', [

@@ -64,16 +64,15 @@ class PostSeeder extends Seeder
             ],
         ];
 
-        for ($i = 0; $i < count($posts); $i++) {
-            $post = Post::create([
-                ...$posts[$i],
-                'user_id' => rand(1, $usersCount),
-                'category_id' => rand(1, $categoriesCount),
-                'slug' => Str::slug($posts[$i]['title']),
-            ]);
-
-            $post
-                ->addMedia(Storage::disk('public')->path('posts/'.$i + 1 .'.png'))
+        foreach ($posts as $key => $post) {
+            Post::query()
+                ->create([
+                    ...$post,
+                    'user_id' => rand(1, $usersCount),
+                    'category_id' => rand(1, $categoriesCount),
+                    'slug' => Str::slug($post['title']),
+                ])
+                ->addMedia(Storage::disk('public')->path('posts/' . $key + 1 . '.png'))
                 ->toMediaCollection('posts');
         }
     }

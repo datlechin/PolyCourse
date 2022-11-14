@@ -57,17 +57,16 @@ class CourseSeeder extends Seeder
             ],
         ];
 
-        for ($i = 0; $i < count($courses); $i++) {
-            $course = Course::create([
-                ...$courses[$i],
-                'user_id' => rand(1, $usersCount),
-                'category_id' => rand(1, $categoriesCount),
-                'slug' => Str::slug($courses[$i]['name']),
-                'level' => InstructionalLevel::BEGINNER,
-            ]);
-
-            $course
-                ->addMedia(Storage::disk('public')->path('courses/'.$i + 1 .'.png'))
+        foreach ($courses as $key => $course) {
+            Course::query()
+                ->create([
+                    ...$course,
+                    'user_id' => rand(1, $usersCount),
+                    'category_id' => rand(1, $categoriesCount),
+                    'slug' => Str::slug($course['name']),
+                    'level' => InstructionalLevel::Beginner,
+                ])
+                ->addMedia(Storage::disk('public')->path('courses/' . $key + 1 . '.png'))
                 ->toMediaCollection('courses');
         }
     }
