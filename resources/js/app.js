@@ -9,7 +9,7 @@ import '../sass/app.scss'
 
 import Layout from "@/components/Layout.vue"
 
-await createInertiaApp({
+createInertiaApp({
     resolve: (name) => {
         const page = resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'))
         page.then((module) => {
@@ -52,3 +52,8 @@ Inertia.on('finish', (event) => {
         NProgress.remove()
     }
 })
+
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+]);

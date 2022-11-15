@@ -20,9 +20,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('subtitle');
-            $table->text('description');
-            $table->integer('level')->default(InstructionalLevel::ALL->value);
+            $table->string('subtitle', 300)->nullable();
+            $table->text('description')->nullable();
+            $table->string('level')->default(InstructionalLevel::All->value);
             $table->float('price')->default(0);
             $table->string('trailer')->nullable();
             $table->timestamps();

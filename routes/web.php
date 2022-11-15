@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +27,13 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisterController::class, 'index'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
 });
+
+Route::middleware('auth')->group(function () {
+    Route::post('logout', LogoutController::class)->name('logout');
+});
+
+Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [PostController::class, 'show'])->name('blog.show');

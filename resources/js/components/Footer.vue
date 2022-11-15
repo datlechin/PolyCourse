@@ -1,15 +1,9 @@
-<script>
+<script setup>
 import { Link } from '@inertiajs/inertia-vue3'
-
-export default {
-    components: {
-        Link,
-    },
-}
 </script>
 
 <template>
-    <footer class="bg-gray-900 px-7 pt-[68px] pb-10 text-gray-200">
+    <footer class="bg-gray-900 px-7 pt-[68px] pb-10 text-gray-200 text-sm">
         <div class="flex">
             <div>
                 <div class="flex items-center">
@@ -18,7 +12,7 @@ export default {
                     </Link>
                     <h2 class="font-bold">Học Lập Trình Để Đi Làm</h2>
                 </div>
-                <div class="my-4 text-gray-400">
+                <div class="my-4 text-gray-400 space-y-2">
                     <p>
                         Điện thoại:
                         <a href="tel:0123456789">0123456789</a>

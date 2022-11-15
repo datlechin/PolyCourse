@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div>
+    <div class="space-y-7">
         <CourseList :courses="courses" />
         <PostList :posts="posts" />
     </div>
