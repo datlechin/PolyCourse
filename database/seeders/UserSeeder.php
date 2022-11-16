@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Nguyễn Đức Lập',
-                'username' => 'duclapp',
+                'username' => 'duclap',
                 'email' => 'lapndps24157@fpt.edu.vn',
             ],
             [

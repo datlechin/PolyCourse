@@ -52,6 +52,10 @@ defineProps({
                 <PlayCircleIcon class="w-16 h-16 text-white absolute inset-1/2 top-[32%] left-[40%]" />
                 <p class="absolute w-full text-center my-3 text-white font-semibold bottom-0">Xem giới thiệu khoá học</p>
             </div>
+            <div class="text-center mt-5">
+                <h2 class="text-3xl text-blue-500 mb-4">{{ course.price === 0 ? 'Miễn phí' : course.price }}</h2>
+                <button class="bg-blue-500 uppercase font-semibold text-white px-7 py-2 rounded-full hover:bg-blue-700">Đăng ký học</button>
+            </div>
         </div>
     </div>
 </template>
