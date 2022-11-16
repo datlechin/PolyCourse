@@ -1,6 +1,17 @@
 <script setup>
-import { Link } from '@inertiajs/inertia-vue3'
+import { Link, useForm } from '@inertiajs/inertia-vue3'
 import SocialLoginList from "@/components/SocialLoginList.vue";
+import InputError from "@/components/InputError.vue";
+
+const form = useForm({
+    email: null,
+    password: null,
+    remember: false,
+})
+
+const submit = () => {
+    form.post('/login')
+}
 </script>
 
 <template>
@@ -15,24 +26,26 @@ import SocialLoginList from "@/components/SocialLoginList.vue";
         </div>
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                <form class="space-y-6" method="POST">
+                <form class="space-y-6" @submit.prevent="submit">
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                         <div class="mt-1">
-                            <input id="email" type="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                            <input id="email" type="email" v-model="form.email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                            <InputError :message="form.errors.email" />
                         </div>
                     </div>
 
                     <div>
                         <label for="password" class="block text-sm font-medium text-gray-700">Mật Khẩu</label>
                         <div class="mt-1">
-                            <input id="password" type="password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                            <input id="password" type="password" v-model="form.password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                            <InputError :message="form.errors.password" />
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <input id="remember" name="remember" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-blue-500">
+                            <input id="remember" v-model="form.remember" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
                             <label for="remember" class="ml-2 block text-sm text-gray-900">Ghi nhớ đăng nhập</label>
                         </div>
 

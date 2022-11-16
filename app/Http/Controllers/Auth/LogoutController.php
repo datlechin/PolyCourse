@@ -16,6 +16,6 @@ class LogoutController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/');
+        return to_route('home');
     }
 }
