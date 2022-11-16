@@ -8,7 +8,7 @@ import { Link } from '@inertiajs/inertia-vue3'
             <div>
                 <div class="flex items-center">
                     <Link href="/" class="mr-2.5">
-                        <img src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="Logo" class="w-[38px] rounded-lg">
+                        <img src="@/../images/logo.png" alt="Logo" class="w-[38px] rounded-lg">
                     </Link>
                     <h2 class="font-bold">Học Lập Trình Để Đi Làm</h2>
                 </div>
@@ -31,7 +31,7 @@ import { Link } from '@inertiajs/inertia-vue3'
         <div class="flex justify-between mt-12">
             <div>
                 <p class="text-gray-400">
-                    @ F8. Nền tảng học lập trình hàng đầu Việt Nam
+                    {{ new Date().getFullYear() }} © F8. Nền tảng học lập trình hàng đầu Việt Nam
                 </p>
             </div>
             <div class="space-x-2">
