@@ -11,13 +11,13 @@ class HomeController extends Controller
     public function __invoke()
     {
         $courses = Course::query()
-            ->with('user')
+            ->with(['user', 'media'])
             ->limit(8)
             ->get();
 
         $posts = Post::query()
             ->popular()
-            ->with('user')
+            ->with(['user', 'media'])
             ->limit(8)
             ->get();
 
