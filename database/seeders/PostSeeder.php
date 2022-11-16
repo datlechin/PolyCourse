@@ -72,7 +72,7 @@ class PostSeeder extends Seeder
                     'category_id' => rand(1, $categoriesCount),
                     'slug' => Str::slug($post['title']),
                 ])
-                ->addMedia(Storage::disk('public')->path('posts/' . $key + 1 . '.png'))
+                ->addMedia(Storage::disk('public')->path('posts/'.$key + 1 .'.png'))
                 ->toMediaCollection('posts');
         }
     }
