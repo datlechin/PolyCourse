@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class CourseController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         $courses = Course::query();
 
@@ -16,7 +17,7 @@ class CourseController extends Controller
         ]);
     }
 
-    public function show(string $slug)
+    public function show(string $slug): Response
     {
         $course = Course::query()
             ->where('slug', $slug)

@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Post;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class HomeController extends Controller
 {
-    public function __invoke()
+    public function __invoke(): Response
     {
         $courses = Course::query()
             ->with(['user', 'media'])

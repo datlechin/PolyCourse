@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class PostController extends Controller
 {
@@ -11,7 +12,7 @@ class PostController extends Controller
     {
     }
 
-    public function show(string $slug)
+    public function show(string $slug): Response
     {
         $post = Post::query()
             ->where('slug', $slug)
