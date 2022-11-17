@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3'
 import { BookmarkIcon, EllipsisHorizontalIcon } from "@heroicons/vue/24/outline";
+import { dateFormat } from "@/helpers";
 
 defineProps({
     post: Object,
@@ -20,7 +21,7 @@ defineProps({
                         <p class="font-semibold">{{ post.user.name }}</p>
                     </Link>
                     <p class="text-sm text-gray-500">
-                        {{ post.created_at }}
+                        {{ dateFormat(post.created_at) }}
                         <span class="px-1">·</span>
                         2 phút đọc
                     </p>

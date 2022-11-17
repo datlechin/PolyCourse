@@ -2,7 +2,7 @@
 import CourseList from "@/components/CourseList.vue";
 import PostList from "@/components/PostList.vue";
 
-const props = defineProps({
+defineProps({
     courses: Array,
     posts: Array,
 })
