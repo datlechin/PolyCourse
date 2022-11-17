@@ -66,7 +66,7 @@ class CourseSeeder extends Seeder
                     'slug' => Str::slug($course['name']),
                     'level' => InstructionalLevel::Beginner,
                 ])
-                ->addMedia(Storage::disk('public')->path('courses/'.$key + 1 .'.png'))
+                ->addMediaFromDisk('courses/'.$key + 1 .'.png', 'public')
                 ->toMediaCollection('courses');
         }
     }
