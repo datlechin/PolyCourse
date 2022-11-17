@@ -10,7 +10,10 @@ class CourseController extends Controller
 {
     public function index(): Response
     {
-        $courses = Course::query();
+        $courses = Course::query()
+            ->with('media')
+            ->latest()
+            ->get();
 
         return Inertia::render('Courses/Index', [
             'courses' => $courses,

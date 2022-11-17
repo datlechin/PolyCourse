@@ -10,6 +10,12 @@ class PostController extends Controller
 {
     public function index()
     {
+        $posts = Post::query()
+            ->paginate();
+
+        return Inertia::render('Blog', [
+            'posts' => $posts,
+        ]);
     }
 
     public function show(string $slug): Response

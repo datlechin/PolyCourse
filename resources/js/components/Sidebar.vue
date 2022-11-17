@@ -34,7 +34,7 @@ export default {
                 },
                 {
                     name: 'Blog',
-                    component: 'Posts',
+                    component: 'Blog',
                     url: '/blog',
                     icon: NewspaperIcon
                 },

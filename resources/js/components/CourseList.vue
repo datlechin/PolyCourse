@@ -10,9 +10,13 @@ defineProps({
 
 <template>
     <div>
-        <div class="flex justify-between py-4">
-            <h2 class="font-bold text-2xl">Khoá học</h2>
-            <Link href="" class="flex items-center text-blue-500 font-semibold hover:underline">
+        <div class="flex justify-between">
+            <h2 class="font-bold text-2xl mb-3">Khoá học</h2>
+            <Link
+                v-if="!$page.component.startsWith('Courses')"
+                href=""
+                class="flex items-center text-blue-500 font-semibold hover:underline"
+            >
                 Xem tất cả
                 <ChevronRightIcon class="w-4 h-4" />
             </Link>
