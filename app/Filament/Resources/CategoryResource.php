@@ -55,10 +55,12 @@ class CategoryResource extends Resource
 
                     Placeholder::make('created_at')
                         ->label('Tạo lúc')
+                        ->hiddenOn('create')
                         ->content(fn (?Category $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                     Placeholder::make('updated_at')
                         ->label('Cập nhật lúc')
+                        ->hiddenOn('create')
                         ->content(fn (?Category $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
                 ])
                 ->columns(),

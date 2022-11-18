@@ -16,59 +16,7 @@ class CoursesRelationManager extends RelationManager
 {
     protected static string $relationship = 'courses';
 
-    protected static ?string $recordTitleAttribute = 'name';
-
     protected static ?string $label = 'Khoá học';
-
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                Select::make('category_id')
-                    ->relationship('category', 'name')
-                    ->searchable()
-                    ->required(),
-
-                Select::make('user_id')
-                    ->relationship('user', 'name')
-                    ->searchable()
-                    ->required(),
-
-                TextInput::make('name')
-                    ->required()
-                    ->reactive()
-                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
-
-                TextInput::make('slug')
-                    ->disabled()
-                    ->required()
-                    ->unique(Course::class, 'slug', fn ($record) => $record),
-
-                TextInput::make('subtitle')
-                    ->required(),
-
-                TextInput::make('description')
-                    ->required(),
-
-                TextInput::make('level')
-                    ->required()
-                    ->integer(),
-
-                TextInput::make('price')
-                    ->required()
-                    ->numeric(),
-
-                TextInput::make('trailer'),
-
-                Placeholder::make('created_at')
-                    ->label('Created Date')
-                    ->content(fn (?Course $record): string => $record?->created_at?->diffForHumans() ?? '-'),
-
-                Placeholder::make('updated_at')
-                    ->label('Last Modified Date')
-                    ->content(fn (?Course $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
-            ]);
-    }
 
     public static function table(Table $table): Table
     {
@@ -80,9 +28,11 @@ class CoursesRelationManager extends RelationManager
                     ->sortable(),
 
                 TextColumn::make('subtitle')
+                    ->limit(50)
                     ->label('Mô tả'),
 
                 TextColumn::make('price')
+                    ->formatStateUsing(fn (string $state): string => $state == 0 ? 'Miễn phí' : $state)
                     ->label('Giá'),
 
                 TextColumn::make('created_at')
