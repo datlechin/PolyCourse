@@ -1,5 +1,5 @@
 <script setup>
-import { Link } from '@inertiajs/inertia-vue3'
+import { Link, Head } from '@inertiajs/inertia-vue3'
 import { BookmarkIcon, EllipsisHorizontalIcon } from "@heroicons/vue/24/outline";
 import { dateFormat } from "@/helpers";
 
@@ -9,6 +9,7 @@ defineProps({
 </script>
 
 <template>
+    <Head :title="post.title" />
     <div class="w-3/5 mx-auto">
         <h1 class="font-bold text-4xl my-7">{{ post.title }}</h1>
         <div class="flex justify-between items-center mb-7">

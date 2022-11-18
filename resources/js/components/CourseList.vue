@@ -14,7 +14,7 @@ defineProps({
             <h2 class="font-bold text-2xl mb-3">Khoá học</h2>
             <Link
                 v-if="!$page.component.startsWith('Courses')"
-                href=""
+                href="/courses"
                 class="flex items-center text-blue-500 font-semibold hover:underline"
             >
                 Xem tất cả
