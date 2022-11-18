@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function __invoke(): Response
     {
         $courses = Course::query()
-            ->with(['user', 'media'])
+            ->with('media')
             ->limit(8)
             ->get();
 

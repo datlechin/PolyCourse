@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import { createInertiaApp } from '@inertiajs/inertia-vue3'
+import {createInertiaApp, usePage} from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import NProgress from 'nprogress'
@@ -18,8 +18,9 @@ createInertiaApp({
 
         return page
     },
+    title: title => `${title} - ${usePage().props.value.app.name}`,
     setup({ el, App, props, plugin }) {
-        const app = createApp({ render: () => h(App, props) })
+        createApp({ render: () => h(App, props) })
             .use(plugin)
             .mount(el)
     },

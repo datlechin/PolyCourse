@@ -3,4 +3,3 @@ export function dateFormat(time, locale = 'vi-VN') {
 
     return new Intl.DateTimeFormat(locale).format(date)
 }
-g

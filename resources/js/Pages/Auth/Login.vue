@@ -1,5 +1,5 @@
 <script setup>
-import { Link, useForm } from '@inertiajs/inertia-vue3'
+import {Link, Head, useForm, usePage} from '@inertiajs/inertia-vue3'
 import SocialLoginList from "@/components/SocialLoginList.vue";
 import InputError from "@/components/InputError.vue";
 
@@ -15,9 +15,12 @@ const submit = () => {
 </script>
 
 <template>
+    <Head title="Đăng nhập" />
     <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <img class="mx-auto h-12 w-auto rounded-lg" src="@/../images/logo.png" alt="Your Company">
+            <Link href="/">
+                <img class="mx-auto h-12 w-auto rounded-lg" src="@/../images/logo.png">
+            </Link>
             <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Đăng nhập</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 Bạn chưa có tài khoản?

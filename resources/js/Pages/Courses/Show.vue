@@ -1,4 +1,5 @@
 <script setup>
+import { Head } from "@inertiajs/inertia-vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
 
 defineProps({
@@ -7,6 +8,7 @@ defineProps({
 </script>
 
 <template>
+    <Head :title="course.name" />
     <div class="grid grid-cols-3">
         <div class="col-span-2 space-y-9">
             <h1 class="text-4xl font-bold my-4">{{ course.name }}</h1>
