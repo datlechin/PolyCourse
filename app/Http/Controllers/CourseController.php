@@ -12,7 +12,7 @@ class CourseController extends Controller
     {
         $courses = Course::query()
             ->with('media')
-            ->withCount('users')
+            ->withCount('students')
             ->latest()
             ->get();
 
@@ -25,7 +25,7 @@ class CourseController extends Controller
     {
         $course = Course::query()
             ->where('slug', $slug)
-            ->with(['users', 'learnGoals', 'requirements'])
+            ->with(['students', 'learnGoals', 'requirements'])
             ->firstOrFail();
 
         return Inertia::render('Courses/Show', [
