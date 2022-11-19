@@ -17,7 +17,7 @@ defineProps({
         </h3>
         <div class="flex items-center text-gray-500">
             <UserGroupIcon class="w-4 h-4 mr-1" />
-           <span class="text-xs">137,822 học viên</span>
+           <span class="text-xs">{{ course.users_count }} học viên</span>
         </div>
     </div>
 </template>

@@ -13,6 +13,7 @@ class HomeController extends Controller
     {
         $courses = Course::query()
             ->with('media')
+            ->withCount('users')
             ->limit(8)
             ->get();
 

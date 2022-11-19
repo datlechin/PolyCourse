@@ -5,9 +5,7 @@ namespace Database\Seeders;
 use App\Enums\InstructionalLevel;
 use App\Models\Category;
 use App\Models\Course;
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class CourseSeeder extends Seeder
@@ -20,7 +18,6 @@ class CourseSeeder extends Seeder
         Course::truncate();
 
         $categoriesCount = Category::count();
-        $usersCount = User::count();
 
         $courses = [
             [
@@ -61,7 +58,6 @@ class CourseSeeder extends Seeder
             Course::query()
                 ->create([
                     ...$course,
-                    'user_id' => rand(1, $usersCount),
                     'category_id' => rand(1, $categoriesCount),
                     'slug' => Str::slug($course['name']),
                     'level' => InstructionalLevel::Beginner,
