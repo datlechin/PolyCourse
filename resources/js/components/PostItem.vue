@@ -21,7 +21,7 @@ defineProps({
             <Link class="text-xs">
                 <strong class="text-gray-600" v-text="post.author.name" />
                 <span class="mx-2">·</span>
-                <span class="text-gray-400">6 phút đọc</span>
+                <span class="text-gray-400">{{ post.read_duration }} phút đọc</span>
             </Link>
         </div>
     </div>
