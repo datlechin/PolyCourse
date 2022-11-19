@@ -2,15 +2,9 @@
 
 namespace App\Filament\Resources\CategoryResource\RelationManagers;
 
-use App\Models\Course;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Support\Str;
 
 class CoursesRelationManager extends RelationManager
 {

@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostSeeder extends Seeder
