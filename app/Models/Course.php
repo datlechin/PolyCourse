@@ -46,7 +46,7 @@ class Course extends Model implements HasMedia
 
     public function students(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 
     protected function thumbnailUrl(): Attribute
