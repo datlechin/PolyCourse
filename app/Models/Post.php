@@ -29,11 +29,12 @@ class Post extends Model implements HasMedia
 
     protected $appends = [
         'thumbnail_url',
+        'read_duration',
     ];
 
-    public function user(): BelongsTo
+    public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function category(): BelongsTo
@@ -49,7 +50,14 @@ class Post extends Model implements HasMedia
     protected function thumbnailUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl('posts'),
+            get: fn (): string => $this->getFirstMediaUrl('posts'),
+        );
+    }
+
+    protected function readDuration(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => max(1, round(str_word_count($this->content) / 200))
         );
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -12,6 +13,7 @@ class CourseController extends Controller
     {
         $courses = Course::query()
             ->with('media')
+            ->withCount('students')
             ->latest()
             ->get();
 
@@ -24,11 +26,27 @@ class CourseController extends Controller
     {
         $course = Course::query()
             ->where('slug', $slug)
-            ->with(['user', 'learnGoals', 'requirements'])
+            ->with(['learnGoals', 'requirements'])
             ->firstOrFail();
 
         return Inertia::render('Courses/Show', [
             'course' => $course,
         ]);
+    }
+
+    public function subscribe(Request $request, string $slug)
+    {
+        $user = $request->user();
+        $course = Course::query()
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        if ($course->students->contains($user)) {
+            return back()->with('error', 'Bạn đã tham gia vào khoá học này rồi');
+        }
+
+        $course->students()->attach($user);
+
+        return to_route('home')->with('success', 'Đăng ký khoá học thành công');
     }
 }

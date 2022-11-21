@@ -13,12 +13,13 @@ class HomeController extends Controller
     {
         $courses = Course::query()
             ->with('media')
+            ->withCount('students')
             ->limit(8)
             ->get();
 
         $posts = Post::query()
             ->popular()
-            ->with(['user', 'media'])
+            ->with(['author', 'media'])
             ->limit(8)
             ->get();
 

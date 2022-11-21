@@ -32,8 +32,14 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)->name('logout');
 });
 
-Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
-Route::get('courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
+Route::prefix('courses')->name('courses.')->group(function () {
+    Route::get('/', [CourseController::class, 'index'])->name('index');
+    Route::get('{slug}', [CourseController::class, 'show'])->name('show');
+
+    Route::middleware('auth')->group(function () {
+        Route::post('{slug}/subscribe', [CourseController::class, 'subscribe'])->name('subscribe');
+    });
+});
 
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [PostController::class, 'show'])->name('blog.show');

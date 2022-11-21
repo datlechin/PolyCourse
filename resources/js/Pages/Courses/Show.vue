@@ -1,14 +1,23 @@
 <script setup>
 import { Head } from "@inertiajs/inertia-vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
+import {Inertia} from "@inertiajs/inertia";
+import Toast from "@/components/Toast.vue";
 
-defineProps({
+const props = defineProps({
     course: Object,
 })
+
+const subscribe = () => {
+    Inertia.post(`/courses/${props.course.slug}/subscribe`, null, {
+
+    })
+}
 </script>
 
 <template>
     <Head :title="course.name" />
+    <Toast />
     <div class="grid grid-cols-3">
         <div class="col-span-2 space-y-9">
             <h1 class="text-4xl font-bold my-4">{{ course.name }}</h1>
@@ -56,7 +65,7 @@ defineProps({
             </div>
             <div class="text-center mt-5">
                 <h2 class="text-3xl text-blue-500 mb-4">{{ course.price <= 0 ? 'Miễn phí' : course.price }}</h2>
-                <button class="bg-blue-500 uppercase font-semibold text-white px-7 py-2 rounded-full hover:bg-blue-700">Đăng ký học</button>
+                <button @click="subscribe" class="bg-blue-500 uppercase font-semibold text-white px-7 py-2 rounded-full hover:bg-blue-700">Đăng ký học</button>
             </div>
             <div>
                 <ul class="mt-5 ml-20 space-y-3" >

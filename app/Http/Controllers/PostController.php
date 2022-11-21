@@ -11,6 +11,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::query()
+            ->with(['author', 'media'])
             ->paginate();
 
         return Inertia::render('Blog', [
@@ -22,7 +23,7 @@ class PostController extends Controller
     {
         $post = Post::query()
             ->where('slug', $slug)
-            ->with('user')
+            ->with('author')
             ->firstOrFail();
 
         $post->increment('views');

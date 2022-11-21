@@ -15,11 +15,11 @@ defineProps({
         <div class="flex justify-between items-center mb-7">
             <div class="flex">
                 <Link href="">
-                    <img :src="post.user.avatar_url" :alt="post.user.name" class="rounded-full w-12 h-12">
+                    <img :src="post.athor.avatar_url" :alt="post.athor.name" class="rounded-full w-12 h-12">
                 </Link>
                 <div class="ml-3">
                     <Link href="">
-                        <p class="font-semibold">{{ post.user.name }}</p>
+                        <p class="font-semibold">{{ post.athor.name }}</p>
                     </Link>
                     <p class="text-sm text-gray-500">
                         {{ dateFormat(post.created_at) }}

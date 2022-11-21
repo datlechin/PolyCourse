@@ -29,11 +29,6 @@ class Course extends Model implements HasMedia
         'thumbnail_url',
     ];
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
@@ -49,9 +44,9 @@ class Course extends Model implements HasMedia
         return $this->hasMany(CourseRequirement::class);
     }
 
-    public function users(): BelongsToMany
+    public function students(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 
     protected function thumbnailUrl(): Attribute
