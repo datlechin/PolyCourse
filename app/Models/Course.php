@@ -25,6 +25,10 @@ class Course extends Model implements HasMedia
         'trailer',
     ];
 
+    protected $casts = [
+        'price' => 'integer',
+    ];
+
     protected $appends = [
         'thumbnail_url',
     ];

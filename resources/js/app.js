@@ -18,7 +18,7 @@ createInertiaApp({
 
         return page
     },
-    title: title => `${title} - ${usePage().props.value.app.name}`,
+    title: title => `${title} - ${usePage().props.value.appName}`,
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
