@@ -4,25 +4,36 @@ import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 import {ref} from "vue";
 
 const user = usePage().props.value.auth.user;
-
 const userDropdown = ref(false)
 </script>
 
 <template>
     <nav class="bg-white flex items-center justify-between h-[66px] border-b px-7">
+        <!--PC-->
         <div class="flex items-center">
+            <div class="">
+                <button class="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:block md:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
             <Link href="/">
-                <img src="@/../images/logo.png" alt="Logo" class="w-[38px] rounded-lg">
+                <img src="@/../images/logo.png" alt="Logo" class="w-[38px] rounded-lg sm:hidden md:flex">
             </Link>
-            <h4 class="ml-4 font-bold">Học lập trình để đi làm</h4>
+            <h4 class="ml-4 font-bold sm:hidden md:flex">Học lập trình để đi làm</h4>
         </div>
         <div>
-            <div class="flex items-center border-2 border-gray-200 rounded-full h-10 w-[420px] pr-4 pl-2">
+
+            <div class="flex items-center border-2 border-gray-200 rounded-full h-10 w-[420px] pr-4 pl-2 sm:hidden lg:flex">
                 <MagnifyingGlassIcon class="w-5 text-gray-500" />
                 <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ..." class="h-full focus:ring-0 border-0 px-1 w-full">
             </div>
         </div>
-        <div>
+        <div class="flex items-center space-x-5">
+            <div>
+                <MagnifyingGlassIcon class="w-5 text-gray-500 sm:flex md:hidden" />
+            </div>
             <template v-if="user">
                 <button @click="userDropdown = !userDropdown">
                     <img :src="user.avatar_url" :alt="user.name" class="rounded-full w-8 h-8">
