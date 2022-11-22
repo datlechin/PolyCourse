@@ -38,12 +38,12 @@ class CategoryResource extends Resource
                         ->label('Tên')
                         ->required()
                         ->reactive()
-                        ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                        ->afterStateUpdated(fn (string $state, callable $set) => $set('slug', Str::slug($state))),
 
                     TextInput::make('slug')
                         ->disabled()
                         ->required()
-                        ->unique(Category::class, 'slug', fn ($record) => $record),
+                        ->unique(ignoreRecord: true),
 
                     MarkdownEditor::make('description')
                         ->label('Mô tả')

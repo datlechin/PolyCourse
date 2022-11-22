@@ -1,7 +1,8 @@
 <script setup>
 import { Head } from "@inertiajs/inertia-vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
-import {Inertia} from "@inertiajs/inertia";
+import { Inertia } from "@inertiajs/inertia";
+import { priceFormat } from "@/helpers";
 import Toast from "@/components/Toast.vue";
 
 const props = defineProps({
@@ -9,9 +10,7 @@ const props = defineProps({
 })
 
 const subscribe = () => {
-    Inertia.post(`/courses/${props.course.slug}/subscribe`, null, {
-
-    })
+    Inertia.post(`/courses/${props.course.slug}/subscribe`)
 }
 </script>
 
@@ -64,7 +63,7 @@ const subscribe = () => {
                 <p class="absolute w-full text-center my-3 text-white font-semibold bottom-0">Xem giới thiệu khoá học</p>
             </div>
             <div class="text-center mt-5">
-                <h2 class="text-3xl text-blue-500 mb-4">{{ course.price <= 0 ? 'Miễn phí' : course.price }}</h2>
+                <h2 class="text-3xl text-blue-500 mb-4">{{ course.price === 0 ? 'Miễn phí' : priceFormat(course.price) }}</h2>
                 <button @click="subscribe" class="bg-blue-500 uppercase font-semibold text-white px-7 py-2 rounded-full hover:bg-blue-700">Đăng ký học</button>
             </div>
             <div>
