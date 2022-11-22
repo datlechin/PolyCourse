@@ -3,7 +3,6 @@ import { Head } from "@inertiajs/inertia-vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
 import { Inertia } from "@inertiajs/inertia";
 import { priceFormat } from "@/helpers";
-import Toast from "@/components/Toast.vue";
 
 const props = defineProps({
     course: Object,
@@ -16,8 +15,7 @@ const subscribe = () => {
 
 <template>
     <Head :title="course.name" />
-    <Toast />
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-3">
         <div class="col-span-2 space-y-9">
             <h1 class="text-4xl font-bold my-4">{{ course.name }}</h1>
             <div v-if="course.subtitle">
@@ -53,7 +51,7 @@ const subscribe = () => {
                 </ul>
             </div>
         </div>
-        <div class="col-span-1 ml-10 mt-5">
+        <div class="hidden md:block col-span-1 ml-10 mt-5">
             <div class="relative cursor-pointer">
                 <div
                     :style="`background-image: url(${course.thumbnail_url})`"
