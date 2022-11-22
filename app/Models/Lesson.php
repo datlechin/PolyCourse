@@ -12,6 +12,7 @@ class Lesson extends Model
         'name',
         'content',
         'video_url',
+        'time_duration',
     ];
 
     public function course(): BelongsTo

@@ -32,6 +32,7 @@ class LessonSeeder extends Seeder
             Lesson::create([
                 ...$lesson,
                 'course_id' => rand(1, $coursesCount),
+                'time_duration' => random_int(10, 600),
             ]);
         }
     }
