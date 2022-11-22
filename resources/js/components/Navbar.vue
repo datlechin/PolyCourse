@@ -5,13 +5,14 @@ import { ref } from "vue";
 
 const user = usePage().props.value.auth.user;
 const userDropdown = ref(false)
+const mobileMenu = ref(false)
 </script>
 
 <template>
     <nav class="bg-white flex items-center justify-between h-[66px] border-b px-6">
         <div class="flex items-center">
             <div class="block md:hidden">
-                <button class="mobile-menu-button">
+                <button class="mobile-menu-button" @click="mobileMenu = !mobileMenu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:block md:hidden">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
@@ -37,7 +38,7 @@ const userDropdown = ref(false)
                 <Transition>
                     <div
                         v-if="userDropdown"
-                        class="absolute right-7 shadow-lg rounded-lg bg-white text-sm py-2 px-6 min-w-[230px]"
+                        class="absolute top-20 md:top-16 right-6 shadow-lg rounded-lg bg-white text-sm py-2 px-6 min-w-[230px]"
                     >
                         <div class="flex items-center mb-4">
                             <img :src="user.avatar_url" :alt="user.name" class="rounded-full w-12 h-12">
@@ -79,5 +80,20 @@ const userDropdown = ref(false)
                 </Link>
             </template>
         </div>
+        <Transition>
+            <div v-if="mobileMenu" class="flex absolute left-0 h-[150vh] w-full bg-[rgba(0,0,0,.3)]">
+                <div class="w-[80%] bg-white z-10 h-full">
+                    <div>
+                        <div v-if="user">
+                            hello
+                            <img :src="user.avatar_url" :alt="user.name">
+                        </div>
+                        <div v-else>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Transition>
     </nav>
 </template>
