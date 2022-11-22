@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-    <div class="px-3 sm:hidden lg:flex">
+    <div class="px-3 hidden md:block">
         <ul>
             <li
                 v-for="(item, index) in items"

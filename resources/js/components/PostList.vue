@@ -17,7 +17,7 @@ defineProps({
                 <ChevronRightIcon class="w-4 h-4" />
             </Link>
         </div>
-        <div class="grid grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <PostItem
                 v-for="(post, index) in posts"
                 :key="index"

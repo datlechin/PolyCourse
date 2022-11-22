@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <header class="sticky top-0 z-10 w-[100%]">
+    <header class="sticky top-0 z-10">
         <Navbar />
     </header>
 </template>
