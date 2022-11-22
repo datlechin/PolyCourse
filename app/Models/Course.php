@@ -31,6 +31,7 @@ class Course extends Model implements HasMedia
 
     protected $appends = [
         'thumbnail_url',
+        'total_time_duration',
     ];
 
     public function category(): BelongsTo
@@ -62,6 +63,13 @@ class Course extends Model implements HasMedia
     {
         return Attribute::make(
             get: fn () => $this->getFirstMediaUrl('courses'),
+        );
+    }
+
+    protected function totalTimeDuration(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->lessons()->sum('time_duration')
         );
     }
 }

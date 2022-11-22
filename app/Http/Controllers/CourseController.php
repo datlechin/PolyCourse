@@ -27,6 +27,7 @@ class CourseController extends Controller
         $course = Course::query()
             ->where('slug', $slug)
             ->with(['lessons', 'learnGoals', 'requirements'])
+            ->withCount('lessons')
             ->firstOrFail();
 
         return Inertia::render('Courses/Show', [
