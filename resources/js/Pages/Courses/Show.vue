@@ -34,8 +34,34 @@ const subscribe = () => {
                     </li>
                 </ul>
             </div>
-            <div>
+            <div v-if="course.lessons_count > 0" class="space-y-3">
                 <h2 class="text-xl font-bold">Nội dung khoá học</h2>
+                <ul class="flex space-x-3">
+                    <li>
+                        <span class="font-bold">{{ course.lessons_count }}</span> bài học
+                    </li>
+                    <li>
+                        •
+                    </li>
+                    <li>
+                        Thời lượng <span class="font-bold">{{ course.total_time_duration }}</span>
+                    </li>
+                </ul>
+                <ul class="space-y-2">
+                    <li
+                        v-for="(lesson, index) in course.lessons"
+                        :key="index"
+                        class="flex justify-between bg-gray-200 rounded-lg p-2.5 px-5"
+                    >
+                        <span class="flex items-center font-semibold">
+                            <PlayCircleIcon class="mr-2 text-blue-500 w-4 h-4" />
+                            {{ lesson.name }}
+                        </span>
+                        <span class="text-gray-600 text-sm">
+                            {{ lesson.time_duration }}
+                        </span>
+                    </li>
+                </ul>
             </div>
             <div v-if="course.requirements">
                 <h2 class="text-xl font-bold">Yêu cầu</h2>

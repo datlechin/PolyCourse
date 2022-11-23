@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             PostSeeder::class,
             CourseSeeder::class,
+            LessonSeeder::class,
             CourseRequirementSeeder::class,
             CourseLearnGoalSeeder::class,
         ]);
