@@ -34,7 +34,7 @@ const subscribe = () => {
                     </li>
                 </ul>
             </div>
-            <div class="space-y-3">
+            <div v-if="course.lessons_count > 0" class="space-y-3">
                 <h2 class="text-xl font-bold">Nội dung khoá học</h2>
                 <ul class="flex space-x-3">
                     <li>
@@ -47,7 +47,7 @@ const subscribe = () => {
                         Thời lượng <span class="font-bold">{{ course.total_time_duration }}</span>
                     </li>
                 </ul>
-                <ul>
+                <ul class="space-y-2">
                     <li
                         v-for="(lesson, index) in course.lessons"
                         :key="index"
@@ -57,7 +57,7 @@ const subscribe = () => {
                             <PlayCircleIcon class="mr-2 text-blue-500 w-4 h-4" />
                             {{ lesson.name }}
                         </span>
-                        <span class="text-gray-600">
+                        <span class="text-gray-600 text-sm">
                             {{ lesson.time_duration }}
                         </span>
                     </li>
