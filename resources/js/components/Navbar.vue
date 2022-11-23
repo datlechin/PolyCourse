@@ -82,7 +82,7 @@ const mobileMenu = ref(false)
             </template>
         </div>
         <transition>
-            <MobileMenu v-if="mobileMenu" />
+            <MobileMenu v-if="mobileMenu" :user="user" />
         </transition>
     </nav>
 </template>

@@ -1,6 +1,9 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3'
 import { HomeIcon, LightBulbIcon, MapIcon, NewspaperIcon } from "@heroicons/vue/24/solid";
+defineProps({
+    user: Object
+})
 
 const items = [
     {
