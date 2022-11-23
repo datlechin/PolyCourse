@@ -2,6 +2,7 @@
 import { Link, usePage } from '@inertiajs/inertia-vue3'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 import { ref } from "vue";
+import MobileMenu from './MobileMenu.vue'
 
 const user = usePage().props.value.auth.user;
 const userDropdown = ref(false)
@@ -80,20 +81,8 @@ const mobileMenu = ref(false)
                 </Link>
             </template>
         </div>
-        <Transition>
-            <div v-if="mobileMenu" class="flex absolute left-0 h-[150vh] w-full bg-[rgba(0,0,0,.3)]">
-                <div class="w-[80%] bg-white z-10 h-full">
-                    <div>
-                        <div v-if="user">
-                            hello
-                            <img :src="user.avatar_url" :alt="user.name">
-                        </div>
-                        <div v-else>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Transition>
+        <transition>
+            <MobileMenu v-if="mobileMenu" />
+        </transition>
     </nav>
 </template>
