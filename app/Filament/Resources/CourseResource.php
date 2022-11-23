@@ -111,12 +111,37 @@ class CourseResource extends Resource
                                                 ->required(),
                                         ])
                                         ->defaultItems(3)
-                                        ->createItemButtonLabel('Thêm dòng mới')
+                                        ->createItemButtonLabel('Thêm dòng mới'),
                                 ]),
                         ]),
 
                     Forms\Components\Wizard\Step::make('Bài học')
-                        ->schema([]),
+                        ->schema([
+                            Forms\Components\Card::make()
+                                ->schema([
+                                    Forms\Components\Repeater::make('lessons')
+                                        ->label('Bài học')
+                                        ->relationship()
+                                        ->schema([
+                                            Forms\Components\TextInput::make('name')
+                                                ->label('Tên bài học')
+                                                ->required(),
+
+                                            Forms\Components\TextInput::make('video_url')
+                                                ->label('Video')
+                                                ->placeholder('Link video Youtube'),
+
+                                            Forms\Components\TextInput::make('time_duration')
+                                                ->label('Thời lượng video')
+                                                ->numeric()
+                                                ->placeholder('Thời lượng của video tính bằng giây'),
+
+                                            Forms\Components\MarkdownEditor::make('content')
+                                                ->label('Nội dung')
+                                                ->placeholder('Nội dung bài học'),
+                                        ]),
+                                ]),
+                        ]),
                 ])
                     ->columnSpanFull(),
             ]);
