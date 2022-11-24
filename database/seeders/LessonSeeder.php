@@ -30,7 +30,7 @@ class LessonSeeder extends Seeder
                 'name' => 'Cài đặt babel plugin module resolver',
                 'video_url' => 'https://youtu.be/wwGkGi1WFgg',
             ],
-                        [
+            [
                 'name' => 'SSH vào Server Ubuntu Thật ',
                 'video_url' => 'https://youtu.be/ScLOfVwezKU',
             ],
