@@ -1,47 +1,33 @@
-<script>
-import { HomeIcon, NewspaperIcon, LightBulbIcon, MapIcon } from '@heroicons/vue/24/solid'
+<script setup>
 import { Link } from '@inertiajs/inertia-vue3'
-import Home from "@/Pages/Home.vue";
+import { HomeIcon, LightBulbIcon, MapIcon, NewspaperIcon } from "@heroicons/vue/24/solid";
 
-export default {
-    components: {
-        Link,
-        HomeIcon,
-        NewspaperIcon,
-        LightBulbIcon,
-        MapIcon,
+const items = [
+    {
+        name: 'Home',
+        component: 'Home',
+        url: '/',
+        icon: HomeIcon
     },
-    data() {
-        return {
-            items: [
-                {
-                    name: 'Home',
-                    component: 'Home',
-                    url: '/',
-                    icon: HomeIcon
-                },
-                {
-                    name: 'Lộ trình',
-                    component: 'LearningPaths',
-                    url: '/learning-paths',
-                    icon: MapIcon,
-                },
-                {
-                    name: 'Học',
-                    url: '/courses',
-                    component: 'Courses',
-                    icon: LightBulbIcon,
-                },
-                {
-                    name: 'Blog',
-                    component: 'Blog',
-                    url: '/blog',
-                    icon: NewspaperIcon
-                },
-            ]
-        }
-    }
-}
+    {
+        name: 'Lộ trình',
+        component: 'LearningPaths',
+        url: '/learning-paths',
+        icon: MapIcon,
+    },
+    {
+        name: 'Học',
+        url: '/courses',
+        component: 'Courses',
+        icon: LightBulbIcon,
+    },
+    {
+        name: 'Blog',
+        component: 'Blog',
+        url: '/blog',
+        icon: NewspaperIcon
+    },
+]
 </script>
 
 <template>
