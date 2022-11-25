@@ -1,7 +1,8 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import { ChevronRightIcon } from "@heroicons/vue/24/outline"
-import PostItem from "@/components/PostItem.vue"
+import { ChevronRightIcon } from '@heroicons/vue/24/outline'
+import PostItem from '@/components/PostItem.vue'
+import route from "ziggy-js/src/js";
 
 defineProps({
     posts: Array,
@@ -12,7 +13,7 @@ defineProps({
     <div>
         <div class="flex justify-between py-4">
             <h2 class="font-bold text-2xl">Bài viết nổi bật</h2>
-            <Link href="" class="flex items-center text-blue-500 font-semibold hover:underline">
+            <Link :href="route('blog.index')" class="flex items-center text-blue-500 font-semibold hover:underline">
                 Xem tất cả
                 <ChevronRightIcon class="w-4 h-4" />
             </Link>

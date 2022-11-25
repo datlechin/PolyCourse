@@ -1,12 +1,13 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { HomeIcon, LightBulbIcon, MapIcon, NewspaperIcon } from '@heroicons/vue/24/solid'
+import route from "ziggy-js/src/js";
 
 const items = [
     {
         name: 'Home',
         component: 'Home',
-        url: '/',
+        url: route('home'),
         icon: HomeIcon
     },
     {
@@ -17,14 +18,14 @@ const items = [
     },
     {
         name: 'Học',
-        url: '/courses',
         component: 'Courses',
+        url: route('courses.index'),
         icon: LightBulbIcon,
     },
     {
         name: 'Blog',
         component: 'Blog',
-        url: '/blog',
+        url: route('blog.index'),
         icon: NewspaperIcon
     },
 ]
