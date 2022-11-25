@@ -1,7 +1,7 @@
 <script setup>
-import { Link, Head, useForm } from '@inertiajs/inertia-vue3'
-import SocialLoginList from "@/components/SocialLoginList.vue";
-import InputError from "@/components/InputError.vue";
+import { Link, Head, useForm } from '@inertiajs/vue3'
+import SocialLoginList from '@/components/SocialLoginList.vue'
+import InputError from '@/components/InputError.vue'
 
 const form = useForm({
     username: null,

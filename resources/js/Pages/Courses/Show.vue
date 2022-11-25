@@ -1,7 +1,6 @@
 <script setup>
-import { Head } from "@inertiajs/inertia-vue3";
+import { Head, router } from "@inertiajs/vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
-import { Inertia } from "@inertiajs/inertia";
 import { priceFormat } from "@/helpers";
 
 const props = defineProps({
@@ -9,7 +8,7 @@ const props = defineProps({
 })
 
 const subscribe = () => {
-    Inertia.post(`/courses/${props.course.slug}/subscribe`)
+    router.post(`/courses/${props.course.slug}/subscribe`)
 }
 </script>
 
