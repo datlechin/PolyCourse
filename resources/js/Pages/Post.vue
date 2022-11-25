@@ -1,7 +1,7 @@
 <script setup>
-import { Link, Head } from '@inertiajs/inertia-vue3'
-import { BookmarkIcon, EllipsisHorizontalIcon } from "@heroicons/vue/24/outline";
-import { dateFormat } from "@/helpers";
+import { Link, Head } from '@inertiajs/vue3'
+import { BookmarkIcon, EllipsisHorizontalIcon } from '@heroicons/vue/24/outline'
+import { dateFormat } from "@/helpers"
 
 defineProps({
     post: Object,

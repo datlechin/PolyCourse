@@ -1,7 +1,7 @@
 <script setup>
-import { Link, usePage } from '@inertiajs/inertia-vue3'
+import { Link, usePage } from '@inertiajs/vue3'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
-import { ref } from "vue";
+import { ref } from 'vue'
 import MobileMenu from './MobileMenu.vue'
 
 const user = usePage().props.value.auth.user;

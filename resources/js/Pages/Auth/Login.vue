@@ -1,5 +1,5 @@
 <script setup>
-import {Link, Head, useForm, usePage} from '@inertiajs/inertia-vue3'
+import { Link, Head, useForm } from '@inertiajs/vue3'
 import SocialLoginList from "@/components/SocialLoginList.vue";
 import InputError from "@/components/InputError.vue";
 
