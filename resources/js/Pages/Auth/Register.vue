@@ -1,7 +1,8 @@
 <script setup>
-import { Link, Head, useForm } from '@inertiajs/vue3'
+import {Link, Head, useForm, router} from '@inertiajs/vue3'
 import SocialLoginList from '@/components/SocialLoginList.vue'
 import InputError from '@/components/InputError.vue'
+import route from "ziggy-js/src/js";
 
 const form = useForm({
     username: null,
@@ -12,7 +13,7 @@ const form = useForm({
 })
 
 const submit = () => {
-    form.post('/register')
+    form.post(route('register'))
 }
 </script>
 
@@ -20,13 +21,13 @@ const submit = () => {
     <Head title="Đăng ký" />
     <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <Link href="/">
+            <Link :href="route('home')">
                 <img class="mx-auto h-12 w-auto rounded-lg" src="@/../images/logo.png">
             </Link>
             <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Đăng ký tài khoản</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 Đã có tài khoản?
-                <Link href="/login" class="text-blue-500 hover:underline">Đăng nhập</Link>
+                <Link :href="route('login')" class="text-blue-500 hover:underline">Đăng nhập</Link>
             </p>
         </div>
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">

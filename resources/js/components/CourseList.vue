@@ -2,6 +2,7 @@
 import { Link } from '@inertiajs/vue3'
 import { ChevronRightIcon } from "@heroicons/vue/24/outline"
 import CourseItem from "@/components/CourseItem.vue";
+import route from "ziggy-js/src/js";
 
 defineProps({
     courses: Array,
@@ -14,7 +15,7 @@ defineProps({
             <h2 class="font-bold text-2xl mb-3">Khoá học</h2>
             <Link
                 v-if="!$page.component.startsWith('Courses')"
-                href="/courses"
+                :href="route('courses.index')"
                 class="flex items-center text-blue-500 font-semibold hover:underline"
             >
                 Xem tất cả

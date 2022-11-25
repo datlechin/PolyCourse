@@ -1,5 +1,6 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import route from "ziggy-js/src/js";
 
 defineProps({
     post: Object,
@@ -8,11 +9,11 @@ defineProps({
 
 <template>
     <div>
-        <Link :href="`/blog/${post.slug}`">
+        <Link :href="route('blog.show', { slug: post.slug })">
             <img :src="post.thumbnail_url" :alt="post.title" class="w-full rounded-[16px]">
         </Link>
         <h3 class="font-semibold truncate my-3">
-            <Link :href="`/blog/${post.slug}`" v-text="post.title" />
+            <Link :href="route('blog.show', { slug: post.slug })" v-text="post.title" />
         </h3>
         <div class="flex items-center text-sm">
             <Link>

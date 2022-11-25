@@ -2,13 +2,14 @@
 import { Head, router } from "@inertiajs/vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
 import { priceFormat } from "@/helpers";
+import route from "ziggy-js/src/js";
 
 const props = defineProps({
     course: Object,
 })
 
 const subscribe = () => {
-    router.post(`/courses/${props.course.slug}/subscribe`)
+    router.post(route('courses.subscribe', { slug: props.course.slug }))
 }
 </script>
 

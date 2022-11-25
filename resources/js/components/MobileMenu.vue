@@ -1,5 +1,9 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
+defineProps({
+    user: Object
+})
+
 import {
     HomeIcon,
     LightBulbIcon,
@@ -8,17 +12,14 @@ import {
     ArrowLeftOnRectangleIcon,
     ArrowRightOnRectangleIcon,
     UserCircleIcon
-} from "@heroicons/vue/24/solid";
-
-defineProps({
-    user: Object
-})
+} from '@heroicons/vue/24/solid'
+import route from "ziggy-js/src/js";
 
 const items = [
     {
         name: 'Home',
         component: 'Home',
-        url: '/',
+        url: route('home'),
         icon: HomeIcon
     },
     {
@@ -29,14 +30,14 @@ const items = [
     },
     {
         name: 'Học',
-        url: '/courses',
         component: 'Courses',
+        url: route('courses.index'),
         icon: LightBulbIcon,
     },
     {
         name: 'Blog',
         component: 'Blog',
-        url: '/blog',
+        url: route('blog.index'),
         icon: NewspaperIcon
     },
 ]
@@ -52,13 +53,13 @@ const items = [
                 </div>
                 <ul class="space-y-2">
                     <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
-                        <Link :href="`/@${user.username}`" class="flex">
+                        <Link :href="route('home')" class="flex">
                             <UserCircleIcon class="w-5 w-5 mr-3" />
                             Trang cá nhân
                         </Link>
                     </li>
                     <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
-                        <Link href="/logout" method="post" class="flex">
+                        <Link :href="route('logout')" method="post" class="flex">
                             <ArrowLeftOnRectangleIcon class="w-5 w-5 mr-3" />
                             Đăng xuất
                         </Link>
@@ -67,7 +68,7 @@ const items = [
             </div>
             <div v-else class="mt-5 border-b pb-4 mb-5">
                 <div class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
-                    <Link href="/login" class="flex">
+                    <Link :href="route('login')" class="flex">
                         <ArrowRightOnRectangleIcon class="w-5 w-5 mr-3" />
                         Đăng nhập
                     </Link>
