@@ -1,5 +1,6 @@
 <script setup>
-import { Link } from '@inertiajs/inertia-vue3'
+import { Link } from '@inertiajs/vue3'
+import route from "ziggy-js/src/js";
 </script>
 
 <template>
@@ -7,7 +8,7 @@ import { Link } from '@inertiajs/inertia-vue3'
         <div class="flex">
             <div>
                 <div class="flex items-center">
-                    <Link href="/" class="mr-2.5">
+                    <Link :href="route('home')" class="mr-2.5">
                         <img src="@/../images/logo.png" alt="Logo" class="w-[38px] rounded-lg">
                     </Link>
                     <h2 class="font-bold">Học Lập Trình Để Đi Làm</h2>

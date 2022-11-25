@@ -1,7 +1,7 @@
 <script setup>
-import FacebookIcon from "@/icons/FacebookIcon.vue";
-import TwitterIcon from "@/icons/TwitterIcon.vue";
-import GithubIcon from "@/icons/GithubIcon.vue";
+import FacebookIcon from '@/icons/FacebookIcon.vue'
+import TwitterIcon from '@/icons/TwitterIcon.vue'
+import GithubIcon from '@/icons/GithubIcon.vue'
 
 const socials = [
     {

@@ -1,7 +1,7 @@
 <script setup>
-import { Link, Head } from '@inertiajs/inertia-vue3'
-import { BookmarkIcon, EllipsisHorizontalIcon } from "@heroicons/vue/24/outline";
-import { dateFormat } from "@/helpers";
+import { Link, Head } from '@inertiajs/vue3'
+import { BookmarkIcon, EllipsisHorizontalIcon } from '@heroicons/vue/24/outline'
+import { dateFormat } from "@/helpers"
 
 defineProps({
     post: Object,
@@ -15,11 +15,11 @@ defineProps({
         <div class="flex justify-between items-center mb-7">
             <div class="flex">
                 <Link href="">
-                    <img :src="post.athor.avatar_url" :alt="post.athor.name" class="rounded-full w-12 h-12">
+                    <img :src="post.author.avatar_url" :alt="post.author.name" class="rounded-full w-12 h-12">
                 </Link>
                 <div class="ml-3">
                     <Link href="">
-                        <p class="font-semibold">{{ post.athor.name }}</p>
+                        <p class="font-semibold">{{ post.author.name }}</p>
                     </Link>
                     <p class="text-sm text-gray-500">
                         {{ dateFormat(post.created_at) }}
