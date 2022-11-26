@@ -15,14 +15,15 @@ const priceFormat = (number, currency = 'VND') => {
     })
 }
 
-const secondsToTime = (seconds) => {
-    let hour = Math.floor(seconds / 3600)
-    let minute = Math.floor(seconds % 3600 * 60)
-    let second = Math.floor(seconds % 3600 / 60)
+const secondsToTime = (number) => {
+    let hours = Math.floor(number / 3600);
+    let minutes = Math.floor(number % 3600 / 60);
+    let seconds = Math.floor(number % 3600 % 60);
 
-    let hourText = hour > 0 ? `${hour} giờ` : ''
-    let minuteText = minute > 0 ? `${minute} phút` : ''
-    return `${hourText} ${minuteText}`
+    let hoursText = hours > 0 ? hours + ' giờ ' : "";
+    let minutesText = minutes > 0 ? minutes + ' phút ' : "";
+    // let secondsText = seconds > 0 ? seconds + ' giây ' : "";
+    return hoursText + minutesText;
 }
 
 export { numberFormat, dateFormat, priceFormat, secondsToTime }
