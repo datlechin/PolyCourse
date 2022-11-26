@@ -1,5 +1,5 @@
 <script setup>
-import CourseList from "@/components/CourseList.vue";
+import CourseList from '@/components/CourseList.vue'
 
 defineProps({
     courses: Array,

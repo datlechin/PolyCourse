@@ -1,7 +1,8 @@
 <script setup>
-import {Link, Head, useForm, usePage} from '@inertiajs/inertia-vue3'
-import SocialLoginList from "@/components/SocialLoginList.vue";
-import InputError from "@/components/InputError.vue";
+import { Link, Head, useForm } from '@inertiajs/vue3'
+import SocialLoginList from '@/components/SocialLoginList.vue';
+import InputError from '@/components/InputError.vue';
+import route from "ziggy-js/src/js";
 
 const form = useForm({
     email: null,
@@ -10,7 +11,7 @@ const form = useForm({
 })
 
 const submit = () => {
-    form.post('/login')
+    form.post(route('login'))
 }
 </script>
 
@@ -18,13 +19,13 @@ const submit = () => {
     <Head title="Đăng nhập" />
     <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <Link href="/">
+            <Link :href="route('home')">
                 <img class="mx-auto h-12 w-auto rounded-lg" src="@/../images/logo.png">
             </Link>
             <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Đăng nhập</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 Bạn chưa có tài khoản?
-                <Link href="/register" class="text-blue-500 hover:underline">Đăng ký ngay</Link>
+                <Link :href="route('register')" class="text-blue-500 hover:underline">Đăng ký ngay</Link>
             </p>
         </div>
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
