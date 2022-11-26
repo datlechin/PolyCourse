@@ -40,14 +40,17 @@ class CourseController extends Controller
         $user = $request->user();
         $course = Course::query()
             ->where('slug', $slug)
+            ->with('lesson', function ($query) {
+                $query->oldest();
+            })
             ->firstOrFail();
 
         if ($course->students->contains($user)) {
-            return back()->with('error', 'Bạn đã tham gia vào khoá học này rồi');
+            return to_route('learning', ['course' => $course, 'lesson' => $course->lesson]);
         }
 
         $course->students()->attach($user);
 
-        return to_route('home')->with('success', 'Đăng ký khoá học thành công');
+        return to_route('learning', ['course' => $course, 'lesson' => $course->lesson])->with('success', 'Đăng ký khoá học thành công');
     }
 }
