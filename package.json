@@ -16,12 +16,11 @@
     },
     "dependencies": {
         "@heroicons/vue": "^2.0.13",
-        "@inertiajs/inertia": "^0.11.1",
-        "@inertiajs/inertia-vue3": "^0.6.0",
-        "@inertiajs/progress": "^0.2.7",
+        "@inertiajs/vue3": "^1.0.0-beta.2",
         "@tailwindcss/forms": "^0.5.3",
         "nprogress": "^0.2.0",
         "sass": "^1.56.1",
-        "vue": "^3.2.43"
+        "vue": "^3.2.43",
+        "ziggy-js": "^1.5.0"
     }
 }

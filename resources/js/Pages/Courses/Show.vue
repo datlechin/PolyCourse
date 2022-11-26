@@ -1,15 +1,15 @@
 <script setup>
-import { Head } from "@inertiajs/inertia-vue3";
+import { Head, router } from "@inertiajs/vue3";
 import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
-import { Inertia } from "@inertiajs/inertia";
 import { priceFormat } from "@/helpers";
+import route from "ziggy-js/src/js";
 
 const props = defineProps({
     course: Object,
 })
 
 const subscribe = () => {
-    Inertia.post(`/courses/${props.course.slug}/subscribe`)
+    router.post(route('courses.subscribe', { slug: props.course.slug }))
 }
 </script>
 

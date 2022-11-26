@@ -1,12 +1,13 @@
 <script setup>
-import { Link, usePage } from '@inertiajs/inertia-vue3'
+import { Link, usePage } from '@inertiajs/vue3'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
-import { ref } from "vue";
+import { ref } from 'vue'
 import MobileMenu from './MobileMenu.vue'
+import route from "ziggy-js/src/js";
 
 const user = usePage().props.value.auth.user;
-const userDropdown = ref(false)
-const mobileMenu = ref(false)
+let userDropdown = ref(false)
+let mobileMenu = ref(false)
 </script>
 
 <template>
@@ -19,7 +20,7 @@ const mobileMenu = ref(false)
                     </svg>
                 </button>
             </div>
-            <Link href="/" class="hidden md:block">
+            <Link :href="route('login')" class="hidden md:block">
                 <img src="@/../images/logo.png" alt="Logo" class="w-[38px] rounded-lg">
             </Link>
             <h4 class="ml-4 font-bold hidden md:block">Học lập trình để đi làm</h4>
@@ -50,25 +51,25 @@ const mobileMenu = ref(false)
                         </div>
                         <hr>
                         <div class="my-4">
-                            <Link :href="`/@${user.username}`" class="text-gray-500">
+                            <Link :href="route('home')" class="text-gray-500">
                                 Trang cá nhân
                             </Link>
                         </div>
                         <hr>
                         <div class="my-4 flex flex-col space-y-3">
-                            <Link :href="`/@${user.username}/posts/create`" class="text-gray-500">
+                            <Link :href="route('home')" class="text-gray-500">
                                 Viết blog
                             </Link>
-                            <Link :href="`/@${user.username}/posts`" class="text-gray-500">
+                            <Link :href="route('home')" class="text-gray-500">
                                 Bài viết của tao
                             </Link>
                         </div>
                         <hr>
                         <div class="my-4 flex flex-col space-y-3">
-                            <Link href="/settings" class="text-gray-500">
+                            <Link :href="route('home')" class="text-gray-500">
                                 Thiết lập
                             </Link>
-                            <Link href="/logout" method="post" class="text-gray-500">
+                            <Link :href="route('logout')" method="post" class="text-gray-500">
                                 Đăng xuất
                             </Link>
                         </div>
@@ -76,7 +77,7 @@ const mobileMenu = ref(false)
                 </Transition>
             </template>
             <template v-else>
-                <Link href="/login" class="bg-blue-500 text-white px-5 py-2 font-semibold rounded-full hover:bg-blue-600">
+                <Link :href="route('login')" class="bg-blue-500 text-white px-5 py-2 font-semibold rounded-full hover:bg-blue-600">
                     Đăng nhập
                 </Link>
             </template>
