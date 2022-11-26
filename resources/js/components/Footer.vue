@@ -5,7 +5,7 @@ import route from "ziggy-js/src/js";
 
 <template>
     <footer class="bg-gray-900 px-7 pt-[68px] pb-10 text-gray-200 text-sm">
-        <div class="flex">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mx-0 md:mx-20">
             <div>
                 <div class="flex items-center">
                     <Link :href="route('home')" class="mr-2.5">
@@ -28,9 +28,31 @@ import route from "ziggy-js/src/js";
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="flex justify-between mt-12">
             <div>
+                <h2 class="font-bold text-lg uppercase">Về PolyCourse</h2>
+                <ul class="my-4 text-gray-400 space-y-2">
+                    <li>Giới thiệu</li>
+                    <li>Cơ hội việc làm</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg uppercase">Hỗ trợ</h2>
+                <ul class="my-4 text-gray-400 space-y-2">
+                    <li>Liên hệ</li>
+                    <li>Bảo mật</li>
+                    <li>Điều khoản</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg uppercase">Công ty cổ phần PolyCourse</h2>
+                <ul class="my-4 text-gray-400 space-y-2">
+                    <li>Ngày thành lập: 17/12/2022</li>
+                    <li>Lĩnh vực: Công nghệ, giáo dục, lập trình. PolyCourse xây dựng và phát triển những sản phẩm mang lại giá trị cho cộng đồng.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="block md:flex justify-between mt-12 mx-0 md:mx-20 ">
+            <div class="mb-8 md:mb-0">
                 <p class="text-gray-400">
                     {{ new Date().getFullYear() }} © F8. Nền tảng học lập trình hàng đầu Việt Nam
                 </p>
