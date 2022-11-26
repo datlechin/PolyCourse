@@ -29,14 +29,14 @@ import route from "ziggy-js/src/js";
                 </div>
             </div>
             <div>
-                <h2 class="font-bold text-lg">VỀ PolyCode</h2>
+                <h2 class="font-bold text-lg uppercase">Về PolyCourse</h2>
                 <ul class="my-4 text-gray-400 space-y-2">
                     <li>Giới thiệu</li>
                     <li>Cơ hội việc làm</li>
                 </ul>
             </div>
             <div>
-                <h2 class="font-bold text-lg">HỖ TRỢ</h2>
+                <h2 class="font-bold text-lg uppercase">Hỗ trợ</h2>
                 <ul class="my-4 text-gray-400 space-y-2">
                     <li>Liên hệ</li>
                     <li>Bảo mật</li>
@@ -44,10 +44,10 @@ import route from "ziggy-js/src/js";
                 </ul>
             </div>
             <div>
-                <h2 class="font-bold text-lg">CÔNG TY CỔ PHẦN POLY CODE</h2>
+                <h2 class="font-bold text-lg uppercase">Công ty cổ phần PolyCourse</h2>
                 <ul class="my-4 text-gray-400 space-y-2">
                     <li>Ngày thành lập: 17/12/2022</li>
-                    <li>Lĩnh vực: Công nghệ, giáo dục, lập trình. PolyCode xây dựng và phát triển những sản phẩm mang lại giá trị cho cộng đồng.</li>
+                    <li>Lĩnh vực: Công nghệ, giáo dục, lập trình. PolyCourse xây dựng và phát triển những sản phẩm mang lại giá trị cho cộng đồng.</li>
                 </ul>
             </div>
         </div>
