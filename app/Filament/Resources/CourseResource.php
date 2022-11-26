@@ -127,7 +127,7 @@ class CourseResource extends Resource
                                                 ->label('Tên bài học')
                                                 ->required(),
 
-                                            Forms\Components\TextInput::make('video_url')
+                                            Forms\Components\TextInput::make('youtube_id')
                                                 ->label('Video')
                                                 ->placeholder('Link video Youtube'),
 
