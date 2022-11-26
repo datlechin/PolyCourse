@@ -1,1 +1,0 @@
-const a=(r,t="vi-VN")=>{const e=new Date(r);return new Intl.DateTimeFormat(t).format(e)},n=(r,t="vi-VN",e={})=>new Intl.NumberFormat(t,e).format(r),o=(r,t="VND")=>n(r,"vi-VN",{style:"currency",currency:"VND"});export{a as d,o as p};

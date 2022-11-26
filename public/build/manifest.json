@@ -4,7 +4,7 @@
     "src": "resources/images/logo.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app.f8b453a7.js",
+    "file": "assets/app.3cfe429d.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -14,41 +14,42 @@
       "resources/js/Pages/Courses/Index.vue",
       "resources/js/Pages/Courses/Show.vue",
       "resources/js/Pages/Home.vue",
+      "resources/js/Pages/Learning.vue",
       "resources/js/Pages/Post.vue"
     ],
     "css": [
-      "assets/app.530c77de.css"
+      "assets/app.10b33352.css"
     ],
     "assets": [
       "assets/logo.1e9d3391.png"
     ]
   },
   "resources/js/Pages/Auth/Login.vue": {
-    "file": "assets/Login.00029f8c.js",
+    "file": "assets/Login.1de7ce62.js",
     "src": "resources/js/Pages/Auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.427db43a.js"
+      "_InputError.5e8016d9.js"
     ]
   },
-  "_InputError.427db43a.js": {
-    "file": "assets/InputError.427db43a.js",
+  "_InputError.5e8016d9.js": {
+    "file": "assets/InputError.5e8016d9.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Auth/Register.vue": {
-    "file": "assets/Register.27ad5650.js",
+    "file": "assets/Register.e53e1536.js",
     "src": "resources/js/Pages/Auth/Register.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.427db43a.js"
+      "_InputError.5e8016d9.js"
     ]
   },
   "resources/js/Pages/Blog.vue": {
-    "file": "assets/Blog.a6d09e8f.js",
+    "file": "assets/Blog.6babe483.js",
     "src": "resources/js/Pages/Blog.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -56,52 +57,76 @@
     ]
   },
   "resources/js/Pages/Courses/Index.vue": {
-    "file": "assets/Index.e679160a.js",
+    "file": "assets/Index.2dc061b7.js",
     "src": "resources/js/Pages/Courses/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.d909d171.js",
+      "_CourseList.a6cc9dc6.js",
       "resources/js/app.js"
     ]
   },
-  "_CourseList.d909d171.js": {
-    "file": "assets/CourseList.d909d171.js",
+  "_CourseList.a6cc9dc6.js": {
+    "file": "assets/CourseList.a6cc9dc6.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Courses/Show.vue": {
-    "file": "assets/Show.ee75d263.js",
+    "file": "assets/Show.f042d0b8.js",
     "src": "resources/js/Pages/Courses/Show.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_helpers.81d6138c.js"
+      "_helpers.35d68338.js",
+      "_PlayCircleIcon.c852711e.js"
     ]
   },
-  "_helpers.81d6138c.js": {
-    "file": "assets/helpers.81d6138c.js"
+  "_helpers.35d68338.js": {
+    "file": "assets/helpers.35d68338.js"
   },
-  "resources/js/Pages/Home.vue": {
-    "file": "assets/Home.56e130dd.js",
-    "src": "resources/js/Pages/Home.vue",
-    "isDynamicEntry": true,
+  "_PlayCircleIcon.c852711e.js": {
+    "file": "assets/PlayCircleIcon.c852711e.js",
     "imports": [
-      "_CourseList.d909d171.js",
       "resources/js/app.js"
     ]
   },
+  "resources/js/Pages/Home.vue": {
+    "file": "assets/Home.bd9e8720.js",
+    "src": "resources/js/Pages/Home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CourseList.a6cc9dc6.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/Learning.vue": {
+    "file": "assets/Learning.50b1acf9.js",
+    "src": "resources/js/Pages/Learning.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_helpers.35d68338.js",
+      "_PlayCircleIcon.c852711e.js"
+    ],
+    "css": [
+      "assets/Learning.ac006b8d.css"
+    ]
+  },
   "resources/js/Pages/Post.vue": {
-    "file": "assets/Post.f1c91703.js",
+    "file": "assets/Post.eb7227a9.js",
     "src": "resources/js/Pages/Post.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_helpers.81d6138c.js"
+      "_helpers.35d68338.js"
     ]
   },
+  "resources/js/Pages/Learning.css": {
+    "file": "assets/Learning.ac006b8d.css",
+    "src": "resources/js/Pages/Learning.css"
+  },
   "resources/js/app.css": {
-    "file": "assets/app.530c77de.css",
+    "file": "assets/app.10b33352.css",
     "src": "resources/js/app.css"
   }
 }
