@@ -5,6 +5,7 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@tailwindcss/typography": "^0.5.8",
         "@vitejs/plugin-vue": "^3.2.0",
         "autoprefixer": "^10.4.13",
         "axios": "^1.1.2",
