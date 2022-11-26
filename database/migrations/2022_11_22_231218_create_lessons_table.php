@@ -12,11 +12,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('lessons', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->foreignIdFor(Course::class)->constrained();
             $table->string('name');
             $table->text('content')->nullable();
-            $table->string('video_url')->nullable();
+            $table->string('youtube_id')->nullable();
             $table->integer('time_duration')->default(0);
             $table->timestamps();
         });

@@ -1,8 +1,8 @@
 <script setup>
-import { Head, router } from "@inertiajs/vue3";
-import { CheckIcon, PlayCircleIcon } from "@heroicons/vue/24/solid";
-import { priceFormat } from "@/helpers";
-import route from "ziggy-js/src/js";
+import { Head, router } from '@inertiajs/vue3'
+import { CheckIcon, PlayCircleIcon } from '@heroicons/vue/24/solid';
+import { priceFormat, secondsToTime } from '@/helpers'
+import route from 'ziggy-js/src/js'
 
 const props = defineProps({
     course: Object,
@@ -44,7 +44,7 @@ const subscribe = () => {
                         •
                     </li>
                     <li>
-                        Thời lượng <span class="font-bold">{{ course.total_time_duration }}</span>
+                        Thời lượng <span class="font-bold">{{ secondsToTime(course.total_time_duration) }}</span>
                     </li>
                 </ul>
                 <ul class="space-y-2">
@@ -58,7 +58,7 @@ const subscribe = () => {
                             {{ lesson.name }}
                         </span>
                         <span class="text-gray-600 text-sm">
-                            {{ lesson.time_duration }}
+                            {{ secondsToTime(lesson.time_duration) }}
                         </span>
                     </li>
                 </ul>

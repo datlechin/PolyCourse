@@ -13,90 +13,90 @@ class LessonSeeder extends Seeder
      */
     public function run(): void
     {
-        Lesson::truncate();
+//        Lesson::truncate();
 
         $coursesCount = Course::count();
 
         $lessons = [
             [
                 'name' => 'Nhận được gì sau khóa học?',
-                'video_url' => 'https://youtu.be/R6plN3FvzFY',
+                'youtube_id' => 'R6plN3FvzFY',
             ],
             [
                 'name' => 'HTML, CSS là gì?',
-                'video_url' => 'https://youtu.be/zwsPND378OQ',
+                'youtube_id' => 'zwsPND378OQ',
             ],
             [
                 'name' => 'Cài đặt babel plugin module resolver',
-                'video_url' => 'https://youtu.be/wwGkGi1WFgg',
+                'youtube_id' => 'wwGkGi1WFgg',
             ],
             [
                 'name' => 'SSH vào Server Ubuntu Thật ',
-                'video_url' => 'https://youtu.be/ScLOfVwezKU',
+                'youtube_id' => 'ScLOfVwezKU',
             ],
             [
                 'name' => 'Cài đặt NodeJS trên WSL',
-                'video_url' => 'https://youtu.be/9rddrjDkmWo',
+                'youtube_id' => '9rddrjDkmWo',
             ],
             [
                 'name' => 'Tạo dự án ReactJS trên WSL',
-                'video_url' => 'https://youtu.be/aj3HXDfrM2Q',
+                'youtube_id' => 'aj3HXDfrM2Q',
             ],
             [
                 'name' => 'Chạy dự án ExpressJS trên WSL',
-                'video_url' => 'https://youtu.be/MpYEUtbbFSg',
+                'youtube_id' => 'MpYEUtbbFSg',
             ],
             [
                 'name' => 'Cài đặt PHP 8 & Composer trên WSL',
-                'video_url' => 'https://youtu.be/_Le-We25B0k',
+                'youtube_id' => '_Le-We25B0k',
             ],
             [
                 'name' => 'Chạy dự án Laravel 8 trên WSL',
-                'video_url' => 'https://youtu.be/EHlmj2KDyHU',
+                'youtube_id' => 'EHlmj2KDyHU',
             ],
             [
                 'name' => 'Cài Đặt Windows Terminal',
-                'video_url' => 'https://youtu.be/egSxAF-Sak4',
+                'youtube_id' => 'egSxAF-Sak4',
             ],
             [
                 'name' => 'Giới thiệu Windows Terminal & WSL',
-                'video_url' => 'https://youtu.be/7ppRSaGT1uw',
+                'youtube_id' => '7ppRSaGT1uw',
             ],
             [
                 'name' => 'React Router V6',
-                'video_url' => 'https://youtu.be/5jYlY4y5Dfs',
+                'youtube_id' => '5jYlY4y5Dfs',
             ],
             [
                 'name' => 'useImperativeHandle() hook',
-                'video_url' => 'https://youtu.be/dSzf0nv6QmM',
+                'youtube_id' => 'dSzf0nv6QmM',
             ],
             [
                 'name' => 'useReducer() hook',
-                'video_url' => 'https://youtu.be/yn-8PVKBBn0',
+                'youtube_id' => 'yn-8PVKBBn0',
             ],
             [
                 'name' => 'useMemo() hook',
-                'video_url' => 'https://youtu.be/TGaxZyZzB7E',
+                'youtube_id' => 'TGaxZyZzB7E',
             ],
             [
                 'name' => 'useEffect with dependencies',
-                'video_url' => 'https://youtu.be/OOt2VRa1Oeg',
+                'youtube_id' => 'OOt2VRa1Oeg',
             ],
             [
                 'name' => 'Todolist with useState() ',
-                'video_url' => 'https://youtu.be/bpVFSiNsFHY',
+                'youtube_id' => 'bpVFSiNsFHY',
             ],
             [
                 'name' => 'CRA Folder Structure',
-                'video_url' => 'https://youtu.be/-Ka_3RkQAvk',
+                'youtube_id' => '-Ka_3RkQAvk',
             ],
             [
                 'name' => 'NPM, NPX và YARN là gì?',
-                'video_url' => 'https://youtu.be/7sX_8lKURqo',
+                'youtube_id' => '7sX_8lKURqo',
             ],
             [
                 'name' => 'Tạo dự án với React + Webpack',
-                'video_url' => 'https://youtu.be/1EBe-l1E3pM',
+                'youtube_id' => '1EBe-l1E3pM',
             ],
         ];
 
