@@ -1,17 +1,19 @@
 <script setup>
+import { Head } from '@inertiajs/vue3'
+
+defineProps({
+    learningPath: Object,
+})
 </script>
 
 <template>
-    <Head title="Lộ trình học" />
+    <Head :title="learningPath.name" />
     <div class="m-auto md:m-0 md:w-9/12 space-y-12">
-        <div class="mb-14 mt-3 space-y-5 text-sm">
-            <h2 class="text-3xl font-bold mb-3">Lộ trình học</h2>
-            <p class="leading-5">Hầu hết các websites hoặc ứng dụng di động đều có 2 phần là Front-end và Back-end. Front-end là phần giao diện người dùng nhìn thấy và có thể tương tác, đó chính là các ứng dụng mobile hay những website bạn đã từng sử dụng. Vì vậy, nhiệm vụ của lập trình viên Front-end là xây dựng các giao diện đẹp, dễ sử dụng và tối ưu trải nghiệm người dùng.</p>
-            <p>Tại Việt Nam, <span class="text-blue-500 font-bold underline">lương trung bình</span> cho lập trình viên front-end vào khoảng <span class="font-bold">16.000.000đ</span> / tháng.</p>
-            <p class="pb-5">Dưới đây là các khóa học F8 đã tạo ra dành cho bất cứ ai theo đuổi sự nghiệp trở thành một lập trình viên Front-end.</p>
-            <span class="before:block before:absolute before:-inset-1 before:bg-blue-500 relative before:w-1">
-                <p class="ml-5 text-gray-500">Các khóa học có thể chưa đầy đủ, F8 vẫn đang nỗ lực hoàn thiện trong thời gian sớm nhất.</p>
-            </span>
+        <div class="mb-14 mt-3 space-y-5">
+            <h2 class="text-3xl font-bold mb-3" v-text="learningPath.name" />
+            <div class="prose">
+                {{ learningPath.content }}
+            </div>
         </div>
         <div class="flex flex-col">
             <h4 class="font-bold text-2xl mb-3">1. Tìm hiểu về ngành IT</h4>

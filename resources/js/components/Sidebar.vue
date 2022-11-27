@@ -13,7 +13,7 @@ const items = [
     {
         name: 'Lộ trình',
         component: 'LearningPaths',
-        url: '/learning-paths',
+        url: route('learning-paths.index'),
         icon: MapIcon,
     },
     {
