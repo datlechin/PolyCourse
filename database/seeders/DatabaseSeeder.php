@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 
         $this->uploadFiles('posts');
         $this->uploadFiles('courses');
+        $this->uploadFiles('learning-paths');
 
         $this->call([
             UserSeeder::class,
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
             LessonSeeder::class,
             CourseRequirementSeeder::class,
             CourseLearnGoalSeeder::class,
+            LearningPathSeeder::class,
         ]);
     }
 

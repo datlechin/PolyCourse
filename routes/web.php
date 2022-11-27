@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -43,5 +44,11 @@ Route::prefix('courses')->name('courses.')->group(function () {
     });
 });
 
+Route::prefix('learning-paths')->name('learning-paths.')->group(function () {
+    Route::get('/', [LearningPathController::class, 'index'])->name('index');
+    Route::get('{slug}', [LearningPathController::class, 'show'])->name('show');
+});
+
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [PostController::class, 'show'])->name('blog.show');
+
