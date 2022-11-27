@@ -20,7 +20,7 @@ let mobileMenu = ref(false)
                     </svg>
                 </button>
             </div>
-            <Link :href="route('login')" class="hidden md:block">
+            <Link :href="route('home')" class="hidden md:block">
                 <img src="@/../images/logo.png" alt="Logo" class="w-[38px] rounded-lg">
             </Link>
             <h4 class="ml-4 font-bold hidden md:block">Học lập trình để đi làm</h4>

@@ -1,11 +1,11 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link , usePage } from '@inertiajs/vue3'
 import route from "ziggy-js/src/js";
 </script>
 
 <template>
     <footer class="bg-gray-900 px-7 pt-[68px] pb-10 text-gray-200 text-sm">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mx-0 md:mx-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-0 md:mx-36">
             <div>
                 <div class="flex items-center">
                     <Link :href="route('home')" class="mr-2.5">
@@ -51,10 +51,10 @@ import route from "ziggy-js/src/js";
                 </ul>
             </div>
         </div>
-        <div class="block md:flex justify-between mt-12 mx-0 md:mx-20 ">
+        <div class="block md:flex justify-between mt-12 mx-0 md:mx-36">
             <div class="mb-8 md:mb-0">
                 <p class="text-gray-400">
-                    {{ new Date().getFullYear() }} © F8. Nền tảng học lập trình hàng đầu Việt Nam
+                    {{ new Date().getFullYear() }} © {{ usePage().props.value.appName }}. Nền tảng học lập trình hàng đầu Việt Nam
                 </p>
             </div>
             <div class="space-x-2">
