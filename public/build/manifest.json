@@ -4,7 +4,7 @@
     "src": "resources/images/logo.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app.5e04eada.js",
+    "file": "assets/app.9be09630.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -27,31 +27,31 @@
     ]
   },
   "resources/js/Pages/Auth/Login.vue": {
-    "file": "assets/Login.c759e7cc.js",
+    "file": "assets/Login.2bfa84cd.js",
     "src": "resources/js/Pages/Auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.ed7cb7f1.js"
+      "_InputError.75d80dbe.js"
     ]
   },
-  "_InputError.ed7cb7f1.js": {
-    "file": "assets/InputError.ed7cb7f1.js",
+  "_InputError.75d80dbe.js": {
+    "file": "assets/InputError.75d80dbe.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Auth/Register.vue": {
-    "file": "assets/Register.4e6d3335.js",
+    "file": "assets/Register.c927da9f.js",
     "src": "resources/js/Pages/Auth/Register.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.ed7cb7f1.js"
+      "_InputError.75d80dbe.js"
     ]
   },
   "resources/js/Pages/Blog.vue": {
-    "file": "assets/Blog.ec0ca54a.js",
+    "file": "assets/Blog.4b17be17.js",
     "src": "resources/js/Pages/Blog.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -59,63 +59,63 @@
     ]
   },
   "resources/js/Pages/Courses/Index.vue": {
-    "file": "assets/Index.6a044658.js",
+    "file": "assets/Index.cf2dcc5b.js",
     "src": "resources/js/Pages/Courses/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.0e07ed8f.js",
+      "_CourseList.66239317.js",
       "resources/js/app.js"
     ]
   },
-  "_CourseList.0e07ed8f.js": {
-    "file": "assets/CourseList.0e07ed8f.js",
+  "_CourseList.66239317.js": {
+    "file": "assets/CourseList.66239317.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Courses/Show.vue": {
-    "file": "assets/Show.e7690494.js",
+    "file": "assets/Show.69f3a4b7.js",
     "src": "resources/js/Pages/Courses/Show.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_helpers.35d68338.js",
-      "_PlayCircleIcon.396d15d7.js"
+      "_PlayCircleIcon.6635cfbc.js"
     ]
   },
   "_helpers.35d68338.js": {
     "file": "assets/helpers.35d68338.js"
   },
-  "_PlayCircleIcon.396d15d7.js": {
-    "file": "assets/PlayCircleIcon.396d15d7.js",
+  "_PlayCircleIcon.6635cfbc.js": {
+    "file": "assets/PlayCircleIcon.6635cfbc.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Home.vue": {
-    "file": "assets/Home.d7d597bc.js",
+    "file": "assets/Home.43dd7771.js",
     "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.0e07ed8f.js",
+      "_CourseList.66239317.js",
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Learning.vue": {
-    "file": "assets/Learning.c55bba11.js",
+    "file": "assets/Learning.9a1618e7.js",
     "src": "resources/js/Pages/Learning.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_helpers.35d68338.js",
-      "_PlayCircleIcon.396d15d7.js"
+      "_PlayCircleIcon.6635cfbc.js"
     ],
     "css": [
       "assets/Learning.ac006b8d.css"
     ]
   },
   "resources/js/Pages/LearningPaths/Index.vue": {
-    "file": "assets/Index.75e8c568.js",
+    "file": "assets/Index.61aefa48.js",
     "src": "resources/js/Pages/LearningPaths/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -123,7 +123,7 @@
     ]
   },
   "resources/js/Pages/LearningPaths/Show.vue": {
-    "file": "assets/Show.cd570aa3.js",
+    "file": "assets/Show.5fbcf5b9.js",
     "src": "resources/js/Pages/LearningPaths/Show.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -131,7 +131,7 @@
     ]
   },
   "resources/js/Pages/Post.vue": {
-    "file": "assets/Post.6e8a0ead.js",
+    "file": "assets/Post.34d605d7.js",
     "src": "resources/js/Pages/Post.vue",
     "isDynamicEntry": true,
     "imports": [
