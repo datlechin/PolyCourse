@@ -1,11 +1,11 @@
 <script setup>
 import { Link, usePage } from '@inertiajs/vue3'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
-import { ref } from 'vue'
+import { computed , ref } from 'vue'
 import MobileMenu from './MobileMenu.vue'
 import route from "ziggy-js/src/js";
 
-const user = usePage().props.value.auth.user;
+const user = computed(() => usePage().props.value.auth.user);
 let userDropdown = ref(false)
 let mobileMenu = ref(false)
 </script>
