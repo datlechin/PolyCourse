@@ -67,7 +67,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
     public function courses(): BelongsToMany
     {
-        return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Course::class, 'course_user');
     }
 
     protected function avatarUrl(): Attribute

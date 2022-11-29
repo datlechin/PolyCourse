@@ -16,10 +16,10 @@ defineProps({
             <Link
                 v-if="!$page.component.startsWith('Courses')"
                 :href="route('courses.index')"
-                class="flex items-center text-blue-500 font-semibold hover:underline"
+                class="group flex items-center text-blue-500 hover:translate-x-0.5 font-semibold hover:underline"
             >
                 Xem tất cả
-                <ChevronRightIcon class="w-4 h-4" />
+                <ChevronRightIcon class="w-4 h-4 group-hover:translate-x-0.5" />
             </Link>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

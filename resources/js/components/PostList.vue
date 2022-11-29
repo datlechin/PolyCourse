@@ -13,9 +13,9 @@ defineProps({
     <div>
         <div class="flex justify-between py-4">
             <h2 class="font-bold text-2xl">Bài viết nổi bật</h2>
-            <Link :href="route('blog.index')" class="flex items-center text-blue-500 font-semibold hover:underline">
+            <Link :href="route('blog.index')" class="group flex items-center text-blue-500 font-semibold hover:underline hover:translate-x-0.5">
                 Xem tất cả
-                <ChevronRightIcon class="w-4 h-4" />
+                <ChevronRightIcon class="w-4 h-4 group-hover:translate-x-0.5" />
             </Link>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
