@@ -1,9 +1,5 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-defineProps({
-    user: Object
-})
-
 import {
     HomeIcon,
     LightBulbIcon,
@@ -14,6 +10,10 @@ import {
     UserCircleIcon
 } from '@heroicons/vue/24/solid'
 import route from "ziggy-js/src/js";
+
+defineProps({
+    user: Object
+})
 
 const items = [
     {
@@ -53,7 +53,7 @@ const items = [
                 </div>
                 <ul class="space-y-2">
                     <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
-                        <Link :href="route('home')" class="flex">
+                        <Link :href="route('profile', { username: user.username })" class="flex">
                             <UserCircleIcon class="w-5 w-5 mr-3" />
                             Trang cá nhân
                         </Link>

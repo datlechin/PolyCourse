@@ -25,9 +25,9 @@ let mobileMenu = ref(false)
             </Link>
             <h4 class="ml-4 font-bold hidden md:block">Học lập trình để đi làm</h4>
         </div>
-        <div class="hidden md:flex items-center border-2 border-gray-200 rounded-full h-10 w-[420px] pr-4 pl-2">
+        <div class="group hidden md:flex items-center border-2 border-gray-200 rounded-full h-10 w-[420px] pr-4 pl-2">
             <MagnifyingGlassIcon class="w-5 text-gray-500" />
-            <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ..." class="h-full focus:ring-0 border-0 px-1 w-full">
+            <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ..." class="h-full placeholder:text-gray-400 text-sm focus:ring-0 border-0 px-1 w-full">
         </div>
         <div class="flex items-center space-x-5">
             <div>
@@ -51,7 +51,7 @@ let mobileMenu = ref(false)
                         </div>
                         <hr>
                         <div class="my-4">
-                            <Link :href="route('home')" class="text-gray-500">
+                            <Link :href="route('profile', { username: user.username })" class="text-gray-500">
                                 Trang cá nhân
                             </Link>
                         </div>
