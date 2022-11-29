@@ -14,7 +14,7 @@ class PostController extends Controller
             ->with(['author', 'media'])
             ->paginate();
 
-        return Inertia::render('Blog', [
+        return Inertia::render('Blog/Index', [
             'posts' => $posts,
         ]);
     }
@@ -28,7 +28,7 @@ class PostController extends Controller
 
         $post->increment('views');
 
-        return Inertia::render('Post', [
+        return Inertia::render('Blog/Show', [
             'post' => $post,
         ]);
     }
