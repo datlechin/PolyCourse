@@ -3,6 +3,8 @@ import {Link, Head, useForm, router} from '@inertiajs/vue3'
 import SocialLoginList from '@/components/SocialLoginList.vue'
 import InputError from '@/components/InputError.vue'
 import route from "ziggy-js/src/js";
+import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/solid'
+import { ref } from 'vue'
 
 const form = useForm({
     username: null,
@@ -15,6 +17,9 @@ const form = useForm({
 const submit = () => {
     form.post(route('register'))
 }
+
+const showPassword = ref(false)
+const showPasswordConfirmation = ref(false)
 </script>
 
 <template>
@@ -58,14 +63,24 @@ const submit = () => {
                     <div>
                         <label for="password" class="block text-sm font-medium text-gray-700">Mật khẩu</label>
                         <div class="mt-1">
-                            <input id="password" type="password" v-model="form.password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                            <div class="relative">
+                                <input id="password" :type="showPassword ? 'text' : 'password'" v-model="form.password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                                <span class="absolute top-2 right-3 cursor-pointer" @click="showPassword = !showPassword">
+                                    <component :is="showPassword ? EyeIcon : EyeSlashIcon" class="w-5 h-5 text-gray-800" />
+                                </span>
+                            </div>
                             <InputError :message="form.errors.password" />
                         </div>
                     </div>
                     <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700">Nhập lại mật khẩu</label>
+                        <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Nhập lại mật khẩu</label>
                         <div class="mt-1">
-                            <input id="password" type="password" v-model="form.password_confirmation" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                            <div class="relative">
+                                <input id="password_confirmation" :type="showPasswordConfirmation ? 'text' : 'password'" v-model="form.password_confirmation" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                                <span class="absolute top-2 right-3 cursor-pointer" @click="showPasswordConfirmation = !showPasswordConfirmation">
+                                    <component :is="showPasswordConfirmation ? EyeIcon : EyeSlashIcon" class="w-5 h-5 text-gray-800" />
+                                </span>
+                            </div>
                             <InputError :message="form.errors.password_confirmation" />
                         </div>
                     </div>
