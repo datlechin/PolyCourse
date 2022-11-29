@@ -1,9 +1,5 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-defineProps({
-    user: Object
-})
-
 import {
     HomeIcon,
     LightBulbIcon,
@@ -14,6 +10,10 @@ import {
     UserCircleIcon
 } from '@heroicons/vue/24/solid'
 import route from "ziggy-js/src/js";
+
+defineProps({
+    user: Object
+})
 
 const items = [
     {
