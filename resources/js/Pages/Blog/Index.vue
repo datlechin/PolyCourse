@@ -1,13 +1,11 @@
 <script setup>
-import { BookmarkIcon , EllipsisHorizontalIcon } from '@heroicons/vue/24/outline'
 import { Link, Head } from '@inertiajs/vue3'
 import { dateFormat } from '@/helpers'
-import route from "ziggy-js/src/js"
+import route from 'ziggy-js/src/js'
 
 defineProps({
     posts: Object,
 })
-
 </script>
 
 <template>
@@ -29,16 +27,16 @@ defineProps({
                             <span class="ml-2">{{ post.author.name }}</span>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between h-40">
                         <div class="pr-8">
                             <Link :href="route('blog.show', { slug: post.slug })">
                                 <h2 class="text-2xl font-bold">{{ post.title }}</h2>
                             </Link>
                             <p class="mt-3 text-base">{{ post.excerpt }}</p>
                         </div>
-                        <div class="">
+                        <div>
                             <Link :href="route('blog.show', { slug: post.slug })">
-                                <img class="rounded-lg w-80 h-35" :src="post.thumbnail_url" alt="">
+                                <img class="rounded-lg w-80 h-35 object-cover" :src="post.thumbnail_url" :alt="post.title">
                             </Link>
                         </div>
                     </div>
