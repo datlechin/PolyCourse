@@ -49,7 +49,7 @@ const showPassword = ref(false)
                             <div class="relative">
                                 <input id="password" :type="showPassword ? 'text' : 'password'" v-model="form.password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
                                 <span class="absolute top-2 right-3 cursor-pointer" @click="showPassword = !showPassword">
-                                    <component :is="showPassword ? EyeIcon : EyeSlashIcon" class="w-5 h-5 text-gray-800" />
+                                    <component :is="showPassword ? EyeSlashIcon : EyeIcon" class="w-5 h-5 text-gray-800" />
                                 </span>
                             </div>
                             <InputError :message="form.errors.password" />
