@@ -63,13 +63,13 @@ import TwitterIcon from '@/icons/TwitterIcon.vue'
                 </p>
             </div>
             <div class="space-x-2 flex">
-                <a href="" class="px-2 py-1 rounded-md">
+                <a href="https://www.facebook.com/" class="px-2 py-1 rounded-md">
                     <FacebookIcon class="w-4 h-4 text-blue-500" />
                 </a>
-                <a href="" class="px-2 py-1 rounded-md">
+                <a href="https://github.com/" class="px-2 py-1 rounded-md">
                     <GithubIcon class="w-4 h-4" />
                 </a>
-                <a href="" class="px-2 py-1 rounded-md">
+                <a href="https://twitter.com/" class="px-2 py-1 rounded-md">
                     <TwitterIcon class="w-4 h-4 text-blue-500" />
                 </a>
             </div>
