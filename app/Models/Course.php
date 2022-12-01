@@ -78,4 +78,11 @@ class Course extends Model implements HasMedia
             get: fn () => $this->lessons()->sum('time_duration')
         );
     }
+
+    protected function isEnrolled(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => auth()->check() && $this->students->contains(auth()->user()->id),
+        );
+    }
 }
