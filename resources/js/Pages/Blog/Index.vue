@@ -20,14 +20,14 @@ defineProps({
                 v-for="(post, index) in posts.data"
                 :key="index"
             >
-                <div class="border-2 border-gray-200 rounded-lg p-8 mb-5 w-10/12">
+                <div class="border-2 border-gray-200 rounded-lg p-8 mb-5 md:w-10/12">
                     <div class="flex items-center mb-2">
                         <div class="flex items-center">
                             <img class="h-8 w-8 rounded-full" :src="post.author.avatar_url" :alt="post.author.name">
                             <span class="ml-2">{{ post.author.name }}</span>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between h-40">
+                    <div class="flex flex-col md:flex-row items-center md:justify-between">
                         <div class="pr-8">
                             <Link :href="route('blog.show', { slug: post.slug })">
                                 <h2 class="text-2xl font-bold">{{ post.title }}</h2>
@@ -36,11 +36,11 @@ defineProps({
                         </div>
                         <div>
                             <Link :href="route('blog.show', { slug: post.slug })">
-                                <img class="rounded-lg w-80 h-35 object-cover" :src="post.thumbnail_url" :alt="post.title">
+                                <img class="rounded-lg w-80 h-35 my-5" :src="post.thumbnail_url" :alt="post.title">
                             </Link>
                         </div>
                     </div>
-                    <div class="flex text-gray-400 text-sm">
+                    <div class="flex text-gray-400 text-sm mt-3">
                         <span>{{ dateFormat(post.created_at) }}</span>
                         <span class="mx-3">•</span>
                         <span>{{ post.read_duration }} phút đọc</span>
