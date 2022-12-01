@@ -1,9 +1,49 @@
 <script setup>
+import {
+    MagnifyingGlassIcon,
+    HomeIcon,
+    LightBulbIcon,
+    MapIcon,
+    NewspaperIcon,
+    ArrowLeftOnRectangleIcon,
+    ArrowRightOnRectangleIcon,
+    UserCircleIcon,
+    XMarkIcon
+} from '@heroicons/vue/24/solid'
 import { Link, usePage } from '@inertiajs/vue3'
-import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 import { computed , ref } from 'vue'
-import MobileMenu from './MobileMenu.vue'
 import route from "ziggy-js/src/js";
+
+defineProps({
+    user: Object
+})
+
+const items = [
+    {
+        name: 'Home',
+        component: 'Home',
+        url: route('home'),
+        icon: HomeIcon
+    },
+    {
+        name: 'Lộ trình',
+        component: 'LearningPaths',
+        url: '/learning-paths',
+        icon: MapIcon,
+    },
+    {
+        name: 'Học',
+        component: 'Courses',
+        url: route('courses.index'),
+        icon: LightBulbIcon,
+    },
+    {
+        name: 'Blog',
+        component: 'Blog',
+        url: route('blog.index'),
+        icon: NewspaperIcon
+    },
+]
 
 const user = computed(() => usePage().props.value.auth.user);
 let userDropdown = ref(false)
@@ -25,9 +65,9 @@ let mobileMenu = ref(false)
             </Link>
             <h4 class="ml-4 font-bold hidden md:block">Học lập trình để đi làm</h4>
         </div>
-        <div class="group hidden md:flex items-center border-2 border-gray-200 rounded-full h-10 w-[420px] pr-4 pl-2">
+        <div class="hidden md:flex items-center border-2 border-gray-200 rounded-full h-10 w-[420px] pr-4 pl-2">
             <MagnifyingGlassIcon class="w-5 text-gray-500" />
-            <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ..." class="h-full placeholder:text-gray-400 text-sm focus:ring-0 border-0 px-1 w-full">
+            <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ..." class="h-full focus:ring-0 border-0 px-1 w-full">
         </div>
         <div class="flex items-center space-x-5">
             <div>
@@ -61,7 +101,7 @@ let mobileMenu = ref(false)
                                 Viết blog
                             </Link>
                             <Link :href="route('home')" class="text-gray-500">
-                                Bài viết của tao
+                                Bài viết của tôi
                             </Link>
                         </div>
                         <hr>
@@ -82,8 +122,62 @@ let mobileMenu = ref(false)
                 </Link>
             </template>
         </div>
-        <transition>
-            <MobileMenu v-if="mobileMenu" :user="user" />
-        </transition>
+        <div class="fixed top-0 left-0 h-[150vh] z-10 w-full bg-[rgba(0,0,0,.3)]" v-show="mobileMenu">
+            <Transition
+                enter-active-class="transition ease-out duration-200"
+                enter-from-class="opacity-0 translate-y-1"
+                enter-to-class="opacity-100 translate-y-0"
+                leave-active-class="transition ease-in duration-150"
+                leave-from-class="opacity-100 translate-y-0"
+                leave-to-class="opacity-0 translate-y-1"
+            >
+                <div class="w-10/12 bg-white h-full absolute top-0 left-0" v-show="mobileMenu">
+                    <div @click="mobileMenu = false" class="absolute top-5 right-5 w-8 h-8 z-20">
+                        <XMarkIcon />
+                    </div>
+                    <div v-if="user" class="border-b pb-4 mb-5">
+                        <div class="p-5 border-b mb-4">
+                            <img class="rounded-full w-24 h-24" :src="user.avatar_url" :alt="user.name">
+                            <h6 class="mt-4 font-semibold">{{ user.name }}</h6>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
+                                <Link :href="route('profile', { username: user.name })" class="flex">
+                                    <UserCircleIcon class="w-5 w-5 mr-3" />
+                                    Trang cá nhân
+                                </Link>
+                            </li>
+                            <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
+                                <Link :href="route('logout')" method="post" class="flex">
+                                    <ArrowLeftOnRectangleIcon class="w-5 w-5 mr-3" />
+                                    Đăng xuất
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-else class="mt-5 border-b pb-4 mb-5">
+                        <div class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
+                            <Link :href="route('login')" class="flex">
+                                <ArrowRightOnRectangleIcon class="w-5 w-5 mr-3" />
+                                Đăng nhập
+                            </Link>
+                        </div>
+                    </div>
+                    <ul class="space-y-2">
+                        <li
+                            v-for="(item, index) in items"
+                            :key="index"
+                            class="hover:bg-gray-200 rounded-lg py-2.5 px-3 mx-2"
+                            :class="{ 'bg-gray-200': $page.component.startsWith(item.component) }"
+                        >
+                            <Link :href="item.url" class="flex">
+                                <component :is="item.icon" class="w-5 w-5 mr-3" />
+                                {{ item.name }}
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </Transition>
+        </div>
     </nav>
 </template>
