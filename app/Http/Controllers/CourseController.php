@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -22,13 +23,17 @@ class CourseController extends Controller
         ]);
     }
 
-    public function show(string $slug): Response
+    public function show(string $slug): Response|RedirectResponse
     {
         $course = Course::query()
             ->where('slug', $slug)
             ->with(['lessons', 'learnGoals', 'requirements'])
             ->withCount('lessons')
             ->firstOrFail();
+
+        if ($course->is_enrolled) {
+            return to_route('learning', ['course' => $course->slug, 'lesson' => $course->lessons->first()]);
+        }
 
         return Inertia::render('Courses/Show', [
             'course' => $course,
