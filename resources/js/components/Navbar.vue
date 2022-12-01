@@ -11,11 +11,12 @@ import {
     XMarkIcon
 } from '@heroicons/vue/24/solid'
 import { Link, usePage } from '@inertiajs/vue3'
+import { computed , ref } from 'vue'
+import route from "ziggy-js/src/js";
+
 defineProps({
     user: Object
 })
-import { computed , ref } from 'vue'
-import route from "ziggy-js/src/js";
 
 const items = [
     {
@@ -43,6 +44,7 @@ const items = [
         icon: NewspaperIcon
     },
 ]
+
 const user = computed(() => usePage().props.value.auth.user);
 let userDropdown = ref(false)
 let mobileMenu = ref(false)
@@ -89,7 +91,7 @@ let mobileMenu = ref(false)
                         </div>
                         <hr>
                         <div class="my-4">
-                            <Link :href="route('home')" class="text-gray-500">
+                            <Link :href="route('profile', { username: user.username })" class="text-gray-500">
                                 Trang cá nhân
                             </Link>
                         </div>
@@ -120,17 +122,17 @@ let mobileMenu = ref(false)
                 </Link>
             </template>
         </div>
-        <!--        MobileMenu-->
-        <div class="fixed top-0 left-0 h-[150vh] z-10 w-full bg-[rgba(0,0,0,.3)]"  v-show="mobileMenu">
+        <div class="fixed top-0 left-0 h-[150vh] z-10 w-full bg-[rgba(0,0,0,.3)]" v-show="mobileMenu">
             <Transition
                 enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-y-1"
                 enter-to-class="opacity-100 translate-y-0"
                 leave-active-class="transition ease-in duration-150"
                 leave-from-class="opacity-100 translate-y-0"
-                leave-to-class="opacity-0 translate-y-1">
+                leave-to-class="opacity-0 translate-y-1"
+            >
                 <div class="w-10/12 bg-white h-full absolute top-0 left-0" v-show="mobileMenu">
-                    <div @click="mobileMenu=false" class="absolute top-5 right-5 w-8 h-8 z-20">
+                    <div @click="mobileMenu = false" class="absolute top-5 right-5 w-8 h-8 z-20">
                         <XMarkIcon />
                     </div>
                     <div v-if="user" class="border-b pb-4 mb-5">
@@ -140,7 +142,7 @@ let mobileMenu = ref(false)
                         </div>
                         <ul class="space-y-2">
                             <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
-                                <Link :href="route('home')" class="flex">
+                                <Link :href="route('profile', { username: user.name })" class="flex">
                                     <UserCircleIcon class="w-5 w-5 mr-3" />
                                     Trang cá nhân
                                 </Link>
