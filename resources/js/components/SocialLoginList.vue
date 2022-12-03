@@ -2,23 +2,24 @@
 import FacebookIcon from '@/icons/FacebookIcon.vue'
 import TwitterIcon from '@/icons/TwitterIcon.vue'
 import GithubIcon from '@/icons/GithubIcon.vue'
+import route from "ziggy-js/src/js";
 
 const socials = [
     {
         name: 'Facebook',
-        url: null,
+        url: route('socialite.redirect', { provider: 'facebook' }),
         icon: FacebookIcon,
         color: 'text-blue-600'
     },
     {
         name: 'Twitter',
-        url: null,
+        url: route('socialite.redirect', { provider: 'twitter' }),
         icon: TwitterIcon,
         color: 'text-blue-500'
     },
     {
         name: 'Github',
-        url: null,
+        url: route('socialite.redirect', { provider: 'github' }),
         icon: GithubIcon,
         color: 'text-gray-900'
     }

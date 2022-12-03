@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LearningController;
@@ -29,6 +30,8 @@ Route::middleware('guest')->group(function () {
     Route::post('login', [LoginController::class, 'login']);
     Route::get('register', [RegisterController::class, 'index'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
+    Route::get('auth/{provider}/redirect', [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+    Route::get('auth/{provider}/callback', [SocialiteController::class, 'callback'])->name('socialite.callback');
 });
 
 Route::middleware('auth')->group(function () {
