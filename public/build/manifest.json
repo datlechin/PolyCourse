@@ -4,7 +4,7 @@
     "src": "resources/images/logo.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app.d37ef6fb.js",
+    "file": "assets/app.39c1250d.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -29,31 +29,31 @@
     ]
   },
   "resources/js/Pages/Auth/Login.vue": {
-    "file": "assets/Login.f0141cdb.js",
+    "file": "assets/Login.7942ad74.js",
     "src": "resources/js/Pages/Auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.1c105651.js"
+      "_InputError.17c9a2ac.js"
     ]
   },
-  "_InputError.1c105651.js": {
-    "file": "assets/InputError.1c105651.js",
+  "_InputError.17c9a2ac.js": {
+    "file": "assets/InputError.17c9a2ac.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Auth/Register.vue": {
-    "file": "assets/Register.1fbbd2d6.js",
+    "file": "assets/Register.f2d34a28.js",
     "src": "resources/js/Pages/Auth/Register.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.1c105651.js"
+      "_InputError.17c9a2ac.js"
     ]
   },
   "resources/js/Pages/Blog.vue": {
-    "file": "assets/Blog.123a4981.js",
+    "file": "assets/Blog.a3d224d9.js",
     "src": "resources/js/Pages/Blog.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -61,7 +61,7 @@
     ]
   },
   "resources/js/Pages/Blog/Index.vue": {
-    "file": "assets/Index.7830a9d3.js",
+    "file": "assets/Index.7b491d37.js",
     "src": "resources/js/Pages/Blog/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -73,7 +73,7 @@
     "file": "assets/helpers.35d68338.js"
   },
   "resources/js/Pages/Blog/Show.vue": {
-    "file": "assets/Show.d20b9306.js",
+    "file": "assets/Show.2e028101.js",
     "src": "resources/js/Pages/Blog/Show.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -82,60 +82,60 @@
     ]
   },
   "resources/js/Pages/Courses/Index.vue": {
-    "file": "assets/Index.8ed86a74.js",
+    "file": "assets/Index.c1a591f6.js",
     "src": "resources/js/Pages/Courses/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.64b1fe7f.js",
+      "_CourseList.f31d8b70.js",
       "resources/js/app.js"
     ]
   },
-  "_CourseList.64b1fe7f.js": {
-    "file": "assets/CourseList.64b1fe7f.js",
+  "_CourseList.f31d8b70.js": {
+    "file": "assets/CourseList.f31d8b70.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Courses/Show.vue": {
-    "file": "assets/Show.d8a7d50b.js",
+    "file": "assets/Show.5e5b0184.js",
     "src": "resources/js/Pages/Courses/Show.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_helpers.35d68338.js",
-      "_PlayCircleIcon.2d0be270.js"
+      "_PlayCircleIcon.0ceab4a9.js"
     ]
   },
-  "_PlayCircleIcon.2d0be270.js": {
-    "file": "assets/PlayCircleIcon.2d0be270.js",
+  "_PlayCircleIcon.0ceab4a9.js": {
+    "file": "assets/PlayCircleIcon.0ceab4a9.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Home.vue": {
-    "file": "assets/Home.8e4391e0.js",
+    "file": "assets/Home.1a221bcf.js",
     "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.64b1fe7f.js",
+      "_CourseList.f31d8b70.js",
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Learning.vue": {
-    "file": "assets/Learning.d0f096e4.js",
+    "file": "assets/Learning.d22caa56.js",
     "src": "resources/js/Pages/Learning.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_helpers.35d68338.js",
-      "_PlayCircleIcon.2d0be270.js"
+      "_PlayCircleIcon.0ceab4a9.js"
     ],
     "css": [
       "assets/Learning.779b2b66.css"
     ]
   },
   "resources/js/Pages/LearningPaths/Index.vue": {
-    "file": "assets/Index.b22e7de2.js",
+    "file": "assets/Index.2c3d48c7.js",
     "src": "resources/js/Pages/LearningPaths/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -143,7 +143,7 @@
     ]
   },
   "resources/js/Pages/LearningPaths/Show.vue": {
-    "file": "assets/Show.8c2e11f6.js",
+    "file": "assets/Show.b32abb75.js",
     "src": "resources/js/Pages/LearningPaths/Show.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -151,7 +151,7 @@
     ]
   },
   "resources/js/Pages/Profile.vue": {
-    "file": "assets/Profile.bab76173.js",
+    "file": "assets/Profile.0af9b3ac.js",
     "src": "resources/js/Pages/Profile.vue",
     "isDynamicEntry": true,
     "imports": [
