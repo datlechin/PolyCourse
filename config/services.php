@@ -36,7 +36,9 @@ return [
     ],
 
     'twitter' => [
-
+        'client_id' => env('TWITTER_API_KEY'),
+        'client_secret' => env('TWITTER_API_SECRET'),
+        'redirect' => '',
     ],
 
     'github' => [

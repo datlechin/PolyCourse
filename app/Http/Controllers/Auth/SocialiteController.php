@@ -24,10 +24,10 @@ class SocialiteController extends Controller
     {
         $providerUser = Socialite::driver($provider)->user();
 
-        $socialAccount = SocialAccount::firstOrNew([
-            'provider_id' => $providerUser->getId(),
-            'provider_name' => $provider,
-        ]);
+        $socialAccount = SocialAccount::firstOrNew(
+            ['provider_id' => $providerUser->getId(), 'provider_name' => $provider],
+            ['token' => $providerUser->token]
+        );
 
         $user = User::updateOrCreate(
             ['email' => $providerUser->getEmail()],
@@ -42,6 +42,8 @@ class SocialiteController extends Controller
 
         $socialAccount->user()->associate($user);
         $socialAccount->save();
+
+        Auth::login($user);
 
         return to_route('home');
     }
