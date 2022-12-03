@@ -32,6 +32,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasMedia
         'phone',
         'bio',
         'avatar',
+        'email_verified_at',
     ];
 
     /**
@@ -71,6 +72,11 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasMedia
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'course_user');
+    }
+
+    public function socialAccounts(): HasMany
+    {
+        return $this->hasMany(SocialAccount::class);
     }
 
     protected function avatarUrl(): Attribute
