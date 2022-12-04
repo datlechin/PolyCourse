@@ -4,6 +4,7 @@ import { PlayCircleIcon } from '@heroicons/vue/24/solid'
 import LearningLayout from '@/components/LearningLayout.vue'
 import route from 'ziggy-js/src/js'
 import { secondsToTime, dateFormat } from '@/helpers'
+import ReviewList from "@/components/ReviewList.vue";
 
 defineLayout(LearningLayout)
 
@@ -47,6 +48,7 @@ defineProps({
                 <div class="prose mt-8">
                     {{ course.lesson.content }}
                 </div>
+                <ReviewList :review="course.reviews" />
             </div>
         </div>
     </div>

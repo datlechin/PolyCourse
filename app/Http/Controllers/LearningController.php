@@ -11,7 +11,7 @@ class LearningController extends Controller
     {
         $course = Course::query()
             ->where('slug', $course)
-            ->with('lessons')
+            ->with(['lessons', 'reviews'])
             ->withWhereHas('lesson', function ($query) use ($lesson) {
                 $query->where('id', $lesson);
             })

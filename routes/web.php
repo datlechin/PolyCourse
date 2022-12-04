@@ -10,6 +10,7 @@ use App\Http\Controllers\LearningController;
 use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,8 @@ Route::get('@{username}', ProfileController::class)->name('profile');
 Route::prefix('courses')->name('courses.')->group(function () {
     Route::get('/', [CourseController::class, 'index'])->name('index');
     Route::get('{slug}', [CourseController::class, 'show'])->name('show');
+
+    Route::resource('reviews', ReviewController::class);
 
     Route::middleware('auth')->group(function () {
         Route::post('{slug}/subscribe', [CourseController::class, 'subscribe'])->name('subscribe');
