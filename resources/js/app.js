@@ -3,8 +3,7 @@ import { createInertiaApp, usePage } from '@inertiajs/vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 
 import '../sass/app.scss'
-import Layout from "@/components/Layout.vue";
-import route from "ziggy-js/src/js";
+import Layout from '@/components/Layout.vue'
 
 createInertiaApp({
     resolve:  (name) => {

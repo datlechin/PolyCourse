@@ -1,8 +1,8 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { ChevronRightIcon } from '@heroicons/vue/24/outline'
+import route from 'ziggy-js/src/js'
 import PostItem from '@/components/PostItem.vue'
-import route from "ziggy-js/src/js";
 
 defineProps({
     posts: Array,

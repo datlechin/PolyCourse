@@ -18,11 +18,11 @@ const priceFormat = (number, currency = 'VND') => {
 const secondsToTime = (number) => {
     let hours = Math.floor(number / 3600);
     let minutes = Math.floor(number % 3600 / 60);
-    let seconds = Math.floor(number % 3600 % 60);
+    // let seconds = Math.floor(number % 3600 % 60);
 
-    let hoursText = hours > 0 ? hours + ' giờ ' : "";
-    let minutesText = minutes > 0 ? minutes + ' phút ' : "";
-    // let secondsText = seconds > 0 ? seconds + ' giây ' : "";
+    let hoursText = hours > 0 ? hours + ' giờ ' : '';
+    let minutesText = minutes > 0 ? minutes + ' phút ' : '';
+    // let secondsText = seconds > 0 ? seconds + ' giây ' : '';
     return hoursText + minutesText;
 }
 

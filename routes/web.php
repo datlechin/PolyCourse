@@ -38,6 +38,8 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)->name('logout');
     Route::get('learning/{course:slug}/{lesson}', LearningController::class)->name('learning');
+
+    Route::resource('courses.reviews', ReviewController::class);
 });
 
 Route::get('@{username}', ProfileController::class)->name('profile');
@@ -45,8 +47,6 @@ Route::get('@{username}', ProfileController::class)->name('profile');
 Route::prefix('courses')->name('courses.')->group(function () {
     Route::get('/', [CourseController::class, 'index'])->name('index');
     Route::get('{slug}', [CourseController::class, 'show'])->name('show');
-
-    Route::resource('reviews', ReviewController::class);
 
     Route::middleware('auth')->group(function () {
         Route::post('{slug}/subscribe', [CourseController::class, 'subscribe'])->name('subscribe');

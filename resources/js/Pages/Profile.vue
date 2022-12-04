@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3'
-import route from "ziggy-js/src/js";
+import route from 'ziggy-js/src/js'
 
 defineProps({
     user: Object,

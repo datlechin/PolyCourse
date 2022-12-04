@@ -79,6 +79,11 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasMedia
         return $this->hasMany(SocialAccount::class);
     }
 
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
     protected function avatarUrl(): Attribute
     {
         return Attribute::make(
