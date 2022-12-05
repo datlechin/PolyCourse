@@ -17,7 +17,7 @@ class Review extends Model
     ];
 
     protected $casts = [
-        'rating' => 'integer'
+        'rating' => 'integer',
     ];
 
     public function reviewable(): MorphTo
@@ -25,8 +25,8 @@ class Review extends Model
         return $this->morphTo();
     }
 
-    public function student(): BelongsTo
+    public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

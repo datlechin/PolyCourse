@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import { StarIcon } from '@heroicons/vue/24/solid'
 import { Link } from '@inertiajs/vue3'
 import { ChevronLeftIcon } from '@heroicons/vue/24/solid'
@@ -8,6 +9,8 @@ import ReviewForm from '@/components/ReviewForm.vue'
 defineProps({
     course: Object,
 })
+
+const isOpenReviewModal = ref(false)
 </script>
 
 <template>
@@ -22,7 +25,7 @@ defineProps({
             </div>
         </div>
         <div>
-            <div v-if="!course.is_reviewed" class="flex items-center text-white cursor-pointer">
+            <div @click="isOpenReviewModal = true" v-if="!course.is_reviewed" class="flex items-center text-white cursor-pointer">
                 <StarIcon class="w-4 h-4" />
                 <span class="text-sm ml-2">Đánh giá</span>
             </div>
@@ -30,7 +33,7 @@ defineProps({
     </header>
     <main>
         <slot />
-        <ReviewForm v-if="!course.is_reviewed" :course="course" />
+        <ReviewForm v-if="isOpenReviewModal && !course.is_reviewed" :course="course" />
     </main>
 
     <footer>

@@ -60,4 +60,3 @@ Route::prefix('learning-paths')->name('learning-paths.')->group(function () {
 
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [PostController::class, 'show'])->name('blog.show');
-

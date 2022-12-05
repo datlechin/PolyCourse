@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-    <div>
+    <div class="mt-12 space-y-6">
         <ReviewItem
             v-for="(review, index) in reviews"
             :key="index"
