@@ -4,7 +4,7 @@
     "src": "resources/images/logo.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app.c0a18c01.js",
+    "file": "assets/app.b8803c0a.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -29,39 +29,39 @@
     ]
   },
   "resources/js/Pages/Auth/Login.vue": {
-    "file": "assets/Login.56eb59a4.js",
+    "file": "assets/Login.6458ff32.js",
     "src": "resources/js/Pages/Auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_SocialLoginList.93a76e2a.js",
-      "_InputError.5cb4b8fe.js"
+      "_SocialLoginList.13a0e1e4.js",
+      "_InputError.9e7e0bad.js"
     ]
   },
-  "_SocialLoginList.93a76e2a.js": {
-    "file": "assets/SocialLoginList.93a76e2a.js",
+  "_SocialLoginList.13a0e1e4.js": {
+    "file": "assets/SocialLoginList.13a0e1e4.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_InputError.5cb4b8fe.js": {
-    "file": "assets/InputError.5cb4b8fe.js",
+  "_InputError.9e7e0bad.js": {
+    "file": "assets/InputError.9e7e0bad.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Auth/Register.vue": {
-    "file": "assets/Register.571acbe8.js",
+    "file": "assets/Register.fd4fb7b7.js",
     "src": "resources/js/Pages/Auth/Register.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_SocialLoginList.93a76e2a.js",
-      "_InputError.5cb4b8fe.js"
+      "_SocialLoginList.13a0e1e4.js",
+      "_InputError.9e7e0bad.js"
     ]
   },
   "resources/js/Pages/Blog.vue": {
-    "file": "assets/Blog.5957c858.js",
+    "file": "assets/Blog.d73e3f10.js",
     "src": "resources/js/Pages/Blog.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -69,7 +69,7 @@
     ]
   },
   "resources/js/Pages/Blog/Index.vue": {
-    "file": "assets/Index.0093b145.js",
+    "file": "assets/Index.758fffd0.js",
     "src": "resources/js/Pages/Blog/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -81,7 +81,7 @@
     "file": "assets/helpers.c4028cf4.js"
   },
   "resources/js/Pages/Blog/Show.vue": {
-    "file": "assets/Show.95a42b9b.js",
+    "file": "assets/Show.06bb1490.js",
     "src": "resources/js/Pages/Blog/Show.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -90,61 +90,61 @@
     ]
   },
   "resources/js/Pages/Courses/Index.vue": {
-    "file": "assets/Index.55eeb3aa.js",
+    "file": "assets/Index.0f2cf850.js",
     "src": "resources/js/Pages/Courses/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.a1a1e27a.js",
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_CourseList.b1965936.js"
     ]
   },
-  "_CourseList.a1a1e27a.js": {
-    "file": "assets/CourseList.a1a1e27a.js",
+  "_CourseList.b1965936.js": {
+    "file": "assets/CourseList.b1965936.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Courses/Show.vue": {
-    "file": "assets/Show.b48f2ee0.js",
+    "file": "assets/Show.020f82c4.js",
     "src": "resources/js/Pages/Courses/Show.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_helpers.c4028cf4.js",
-      "_PlayCircleIcon.b8d1a836.js"
+      "_PlayCircleIcon.f0a9918d.js"
     ]
   },
-  "_PlayCircleIcon.b8d1a836.js": {
-    "file": "assets/PlayCircleIcon.b8d1a836.js",
+  "_PlayCircleIcon.f0a9918d.js": {
+    "file": "assets/PlayCircleIcon.f0a9918d.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Home.vue": {
-    "file": "assets/Home.56eeab58.js",
+    "file": "assets/Home.8ebe9fad.js",
     "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_CourseList.a1a1e27a.js",
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_CourseList.b1965936.js"
     ]
   },
   "resources/js/Pages/Learning.vue": {
-    "file": "assets/Learning.14f71140.js",
+    "file": "assets/Learning.f07125e1.js",
     "src": "resources/js/Pages/Learning.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_InputError.5cb4b8fe.js",
+      "_InputError.9e7e0bad.js",
       "_helpers.c4028cf4.js",
-      "_PlayCircleIcon.b8d1a836.js"
+      "_PlayCircleIcon.f0a9918d.js"
     ],
     "css": [
       "assets/Learning.779b2b66.css"
     ]
   },
   "resources/js/Pages/LearningPaths/Index.vue": {
-    "file": "assets/Index.cfadc352.js",
+    "file": "assets/Index.07c74cde.js",
     "src": "resources/js/Pages/LearningPaths/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -152,7 +152,7 @@
     ]
   },
   "resources/js/Pages/LearningPaths/Show.vue": {
-    "file": "assets/Show.4baaaae0.js",
+    "file": "assets/Show.9dae55e7.js",
     "src": "resources/js/Pages/LearningPaths/Show.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -160,7 +160,7 @@
     ]
   },
   "resources/js/Pages/Profile.vue": {
-    "file": "assets/Profile.00ec420a.js",
+    "file": "assets/Profile.21e227d5.js",
     "src": "resources/js/Pages/Profile.vue",
     "isDynamicEntry": true,
     "imports": [
