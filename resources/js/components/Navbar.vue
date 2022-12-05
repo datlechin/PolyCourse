@@ -12,7 +12,7 @@ import {
 } from '@heroicons/vue/24/solid'
 import { Link, usePage } from '@inertiajs/vue3'
 import { computed , ref } from 'vue'
-import route from "ziggy-js/src/js";
+import route from 'ziggy-js/src/js'
 
 defineProps({
     user: Object
@@ -109,7 +109,7 @@ let mobileMenu = ref(false)
                             <Link :href="route('home')" class="text-gray-500">
                                 Thiết lập
                             </Link>
-                            <Link :href="route('logout')" method="post" class="text-gray-500">
+                            <Link :href="route('logout')" method="post" as="button" class="text-gray-500 text-left">
                                 Đăng xuất
                             </Link>
                         </div>
@@ -131,7 +131,7 @@ let mobileMenu = ref(false)
                 leave-from-class="opacity-100 translate-y-0"
                 leave-to-class="opacity-0 translate-y-1"
             >
-                <div class="w-10/12 bg-white h-full absolute top-0 left-0" v-show="mobileMenu">
+                <div class="w-10/12 bg-white h-full absolute top-0 left-0 cursor-pointer" v-show="mobileMenu">
                     <div @click="mobileMenu = false" class="absolute top-5 right-5 w-8 h-8 z-20">
                         <XMarkIcon />
                     </div>
@@ -148,7 +148,7 @@ let mobileMenu = ref(false)
                                 </Link>
                             </li>
                             <li class="hover:bg-gray-200 rounded-lg px-3 py-2.5 mx-2">
-                                <Link :href="route('logout')" method="post" class="flex">
+                                <Link :href="route('logout')" method="post" as="button" class="flex">
                                     <ArrowLeftOnRectangleIcon class="w-5 w-5 mr-3" />
                                     Đăng xuất
                                 </Link>

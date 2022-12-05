@@ -1,8 +1,8 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { ChevronRightIcon } from "@heroicons/vue/24/outline"
-import CourseItem from "@/components/CourseItem.vue";
-import route from "ziggy-js/src/js";
+import route from 'ziggy-js/src/js'
+import CourseItem from '@/components/CourseItem.vue'
 
 defineProps({
     courses: Array,

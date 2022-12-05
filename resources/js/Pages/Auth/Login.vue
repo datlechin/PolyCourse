@@ -1,10 +1,10 @@
 <script setup>
-import { Link, Head, useForm } from '@inertiajs/vue3'
-import SocialLoginList from '@/components/SocialLoginList.vue';
-import InputError from '@/components/InputError.vue';
-import route from "ziggy-js/src/js";
+import { ref } from 'vue'
+import route from 'ziggy-js/src/js'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/solid'
-import { ref } from 'vue';
+import { Link, Head, useForm } from '@inertiajs/vue3'
+import SocialLoginList from '@/components/SocialLoginList.vue'
+import InputError from '@/components/InputError.vue'
 
 const form = useForm({
     email: null,
