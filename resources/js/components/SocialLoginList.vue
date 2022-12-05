@@ -2,7 +2,7 @@
 import FacebookIcon from '@/icons/FacebookIcon.vue'
 import TwitterIcon from '@/icons/TwitterIcon.vue'
 import GithubIcon from '@/icons/GithubIcon.vue'
-import route from "ziggy-js/src/js";
+import route from 'ziggy-js/src/js'
 
 const socials = [
     {

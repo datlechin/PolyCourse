@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\SocialAccount;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -32,7 +30,7 @@ class SocialiteController extends Controller
         $user = User::updateOrCreate(
             ['email' => $providerUser->getEmail()],
             [
-                'name' => $providerUser->getName(),
+                'name' => $providerUser->getName() ?: $providerUser->getEmail(),
                 'username' => $providerUser->getNickname(),
                 'avatar' => $providerUser->getAvatar(),
                 'email_verified_at' => Carbon::now(),

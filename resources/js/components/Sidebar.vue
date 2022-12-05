@@ -1,7 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import route from 'ziggy-js/src/js'
 import { HomeIcon, LightBulbIcon, MapIcon, NewspaperIcon } from '@heroicons/vue/24/solid'
-import route from "ziggy-js/src/js";
 
 const items = [
     {
@@ -32,7 +32,7 @@ const items = [
 </script>
 
 <template>
-    <div class="px-3 hidden md:block">
+    <div class="px-3 hidden md:block md:sticky md:top-20 md:self-start md:overflow-hidden">
         <ul>
             <li
                 v-for="(item, index) in items"

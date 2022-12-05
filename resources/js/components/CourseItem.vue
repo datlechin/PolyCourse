@@ -1,7 +1,7 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
-import { UserGroupIcon } from "@heroicons/vue/24/solid";
-import route from "ziggy-js/src/js";
+import { Link } from '@inertiajs/vue3'
+import { UserGroupIcon } from '@heroicons/vue/24/solid'
+import route from 'ziggy-js/src/js'
 
 defineProps({
     course: Object,

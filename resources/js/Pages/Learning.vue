@@ -1,14 +1,16 @@
 <script setup>
-import { defineLayout, Link } from '@inertiajs/vue3'
+import { defineLayout , Link , usePage } from '@inertiajs/vue3'
 import { PlayCircleIcon } from '@heroicons/vue/24/solid'
 import LearningLayout from '@/components/LearningLayout.vue'
 import route from 'ziggy-js/src/js'
 import { secondsToTime, dateFormat } from '@/helpers'
+import ReviewList from '@/components/ReviewList.vue'
 
 defineLayout(LearningLayout)
 
 defineProps({
     course: Object,
+    lesson: Object,
 })
 </script>
 
@@ -24,9 +26,10 @@ defineProps({
                         v-for="(lesson, index) in course.lessons"
                         :key="index"
                         class="py-3 px-5 hover:bg-gray-200"
+                        :class="{ 'bg-gray-200': lesson.id === course.lesson.id }"
                     >
                         <Link :href="route('learning', { course: course.slug, lesson: lesson.id})">
-                            <div>
+                            <div :class="{ 'font-semibold': lesson.id === course.lesson.id }">
                                 {{ index + 1 }}.
                                 {{ lesson.name }}
                             </div>
@@ -40,13 +43,14 @@ defineProps({
             </div>
         </div>
         <div class="col-span-3">
-            <iframe :src="course.lesson.youtube_url" height="170%" width="100%" />
-            <div class="mx-20 my-8">
+            <iframe class="mx-auto" :src="course.lesson.youtube_url" height="480" width="99%" />
+            <div class="mx-10 my-8">
                 <h1 class="font-bold text-3xl">{{ course.lesson.name }}</h1>
                 <div class="text-sm text-gray-600 mt-2">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
                 <div class="prose mt-8">
                     {{ course.lesson.content }}
                 </div>
+                <ReviewList :reviews="course.reviews" />
             </div>
         </div>
     </div>
