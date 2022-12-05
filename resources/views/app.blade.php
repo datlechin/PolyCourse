@@ -8,9 +8,6 @@
 
     <link rel="shortcut icon" href="{{ Vite::image('logo.png') }}" type="image/x-icon">
 
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
     <!-- Vite -->
     @vite('resources/js/app.js')
     @inertiaHead
