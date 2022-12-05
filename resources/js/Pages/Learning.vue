@@ -1,5 +1,5 @@
 <script setup>
-import { defineLayout , Link , usePage } from '@inertiajs/vue3'
+import { defineLayout, Link , Head } from '@inertiajs/vue3'
 import { PlayCircleIcon } from '@heroicons/vue/24/solid'
 import LearningLayout from '@/components/LearningLayout.vue'
 import route from 'ziggy-js/src/js'
@@ -15,6 +15,7 @@ defineProps({
 </script>
 
 <template>
+    <Head :title="course.lesson.name" />
     <div class="grid grid-cols-4">
         <div class="col-span-1">
             <div class="fixed top-14 w-80">

@@ -1,4 +1,5 @@
 <script setup>
+import { Head } from '@inertiajs/vue3'
 import CourseList from '@/components/CourseList.vue'
 
 defineProps({
@@ -7,6 +8,7 @@ defineProps({
 </script>
 
 <template>
+    <Head title="Khoá học" />
     <div>
         <div class="mb-12">
             <h1 class="font-bold text-3xl">Khoá học</h1>
