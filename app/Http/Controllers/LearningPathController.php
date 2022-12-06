@@ -17,12 +17,8 @@ class LearningPathController extends Controller
         ]);
     }
 
-    public function show(string $slug): Response
+    public function show(LearningPath $learningPath): Response
     {
-        $learningPath = LearningPath::query()
-            ->where('slug', $slug)
-            ->firstOrFail();
-
         return Inertia::render('LearningPaths/Show', [
             'learningPath' => $learningPath,
         ]);
