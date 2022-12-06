@@ -11,6 +11,7 @@ use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::get('learning/{course:slug}/{lesson}', LearningController::class)->name('learning');
 
     Route::resource('courses.reviews', ReviewController::class);
+
+    Route::get('settings', [SettingController::class, 'index'])->name('settings');
+    Route::post('settings', [SettingController::class, 'update']);
 });
 
 Route::get('@{username}', ProfileController::class)->name('profile');
