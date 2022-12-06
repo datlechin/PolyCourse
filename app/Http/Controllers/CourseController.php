@@ -40,7 +40,7 @@ class CourseController extends Controller
         ]);
     }
 
-    public function subscribe(Request $request, string $slug)
+    public function subscribe(Request $request, string $slug): RedirectResponse
     {
         $user = $request->user();
         $course = Course::query()

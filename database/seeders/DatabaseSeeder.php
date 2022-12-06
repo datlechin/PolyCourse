@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             CourseRequirementSeeder::class,
             CourseLearnGoalSeeder::class,
             LearningPathSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 

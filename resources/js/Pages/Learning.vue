@@ -1,32 +1,36 @@
 <script setup>
-import { defineLayout, Link } from '@inertiajs/vue3'
+import { defineLayout, Link , Head } from '@inertiajs/vue3'
 import { PlayCircleIcon } from '@heroicons/vue/24/solid'
 import LearningLayout from '@/components/LearningLayout.vue'
 import route from 'ziggy-js/src/js'
 import { secondsToTime, dateFormat } from '@/helpers'
+import ReviewList from '@/components/ReviewList.vue'
 
 defineLayout(LearningLayout)
 
 defineProps({
     course: Object,
+    lesson: Object,
 })
 </script>
 
 <template>
+    <Head :title="course.lesson.name" />
     <div class="grid md:grid-cols-4">
         <div class="md:col-span-1">
             <div class="md:fixed md:top-14 md:w-80">
                 <div class="py-3 px-5 font-semibold shadow">
                     Nội dung khoá học
                 </div>
-                <ul class="overflow-y-auto h-screen scrollbar">
+                <ul class="h-screen overflow-y-auto scrollbar">
                     <li
                         v-for="(lesson, index) in course.lessons"
                         :key="index"
-                        class="py-3 px-5 hover:bg-gray-200"
+                        class="px-5 py-3 hover:bg-gray-200"
+                        :class="{ 'bg-gray-200': lesson.id === course.lesson.id }"
                     >
                         <Link :href="route('learning', { course: course.slug, lesson: lesson.id})">
-                            <div>
+                            <div :class="{ 'font-semibold': lesson.id === course.lesson.id }">
                                 {{ index + 1 }}.
                                 {{ lesson.name }}
                             </div>
@@ -49,6 +53,7 @@ defineProps({
                         {{ course.lesson.content }}
                     </div>
                 </div>
+                <ReviewList :reviews="course.reviews" />
             </div>
         </div>
     </div>

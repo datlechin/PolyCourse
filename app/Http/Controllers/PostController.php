@@ -8,7 +8,7 @@ use Inertia\Response;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         $posts = Post::query()
             ->with(['author', 'media'])

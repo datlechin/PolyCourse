@@ -32,7 +32,7 @@ class LearningPathSeeder extends Seeder
                 'slug' => Str::slug($learningPath['name']),
                 'content' => fake()->realText(500),
             ])
-                ->addMediaFromDisk('learning-paths/' . $key + 1 . '.png', 'public')
+                ->addMediaFromDisk('learning-paths/'.$key + 1 .'.png', 'public')
                 ->toMediaCollection('learning-paths');
         }
     }

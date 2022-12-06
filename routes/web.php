@@ -10,6 +10,8 @@ use App\Http\Controllers\LearningController;
 use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,11 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)->name('logout');
     Route::get('learning/{course:slug}/{lesson}', LearningController::class)->name('learning');
+
+    Route::resource('courses.reviews', ReviewController::class);
+
+    Route::get('settings', [SettingController::class, 'index'])->name('settings');
+    Route::post('settings', [SettingController::class, 'update']);
 });
 
 Route::get('@{username}', ProfileController::class)->name('profile');
@@ -52,9 +59,8 @@ Route::prefix('courses')->name('courses.')->group(function () {
 
 Route::prefix('learning-paths')->name('learning-paths.')->group(function () {
     Route::get('/', [LearningPathController::class, 'index'])->name('index');
-    Route::get('{slug}', [LearningPathController::class, 'show'])->name('show');
+    Route::get('{learningPath:slug}', [LearningPathController::class, 'show'])->name('show');
 });
 
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [PostController::class, 'show'])->name('blog.show');
-

@@ -2,7 +2,7 @@
 import FacebookIcon from '@/icons/FacebookIcon.vue'
 import TwitterIcon from '@/icons/TwitterIcon.vue'
 import GithubIcon from '@/icons/GithubIcon.vue'
-import route from "ziggy-js/src/js";
+import route from 'ziggy-js/src/js'
 
 const socials = [
     {
@@ -33,16 +33,16 @@ const socials = [
                 <div class="w-full border-t border-gray-300"></div>
             </div>
             <div class="relative flex justify-center text-sm">
-                <span class="bg-white px-2 text-gray-500">Hoặc đăng nhập bằng</span>
+                <span class="px-2 text-gray-500 bg-white">Hoặc đăng nhập bằng</span>
             </div>
         </div>
 
-        <div class="mt-6 grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-3 mt-6">
             <div
                 v-for="(social, index) in socials"
                 :key="index"
             >
-                <a :href="social.url" class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50">
+                <a :href="social.url" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50">
                     <span class="sr-only">Đăng nhập bằng {{ social.name }}</span>
                     <component :is="social.icon" :class="['w-5 h-5', social.color]" />
                 </a>
