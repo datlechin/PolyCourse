@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained();
             $table->string('provider_name');
             $table->string('provider_id');
-            $table->string('token')->nullable();
+            $table->text('token')->nullable();
             $table->timestamps();
         });
     }
