@@ -11,11 +11,11 @@ defineProps({
 <template>
     <Head :title="post.title" />
     <div class="w-3/5 mx-auto">
-        <h1 class="font-bold text-4xl my-7">{{ post.title }}</h1>
-        <div class="flex justify-between items-center mb-7">
+        <h1 class="text-4xl font-bold my-7">{{ post.title }}</h1>
+        <div class="flex items-center justify-between mb-7">
             <div class="flex">
                 <Link href="">
-                    <img :src="post.author.avatar_url" :alt="post.author.name" class="rounded-full w-12 h-12">
+                    <img :src="post.author.avatar_url" :alt="post.author.name" class="w-12 h-12 rounded-full">
                 </Link>
                 <div class="ml-3">
                     <Link href="">
@@ -29,11 +29,11 @@ defineProps({
                 </div>
             </div>
             <div class="flex">
-                <div class="cursor-pointer px-2 py-1">
-                    <BookmarkIcon class="text-gray-500 h-5 w-5 hover:text-gray-900" />
+                <div class="px-2 py-1 cursor-pointer">
+                    <BookmarkIcon class="w-5 h-5 text-gray-500 hover:text-gray-900" />
                 </div>
-                <div class="cursor-pointer px-2 py-1">
-                    <EllipsisHorizontalIcon class="text-gray-500 h-5 w-5 hover:text-gray-900" />
+                <div class="px-2 py-1 cursor-pointer">
+                    <EllipsisHorizontalIcon class="w-5 h-5 text-gray-500 hover:text-gray-900" />
                 </div>
             </div>
         </div>

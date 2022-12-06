@@ -13,7 +13,7 @@ defineProps({
         <Link :href="route('courses.show', { slug: course.slug })">
             <img :src="course.thumbnail_url" :alt="course.name" class="w-full rounded-2xl">
         </Link>
-        <h3 class="font-semibold truncate mt-3 mb-2">
+        <h3 class="mt-3 mb-2 font-semibold truncate">
             <Link :href="route('courses.show', { slug: course.slug })" v-text="course.name" />
         </h3>
         <div class="flex items-center text-gray-500">

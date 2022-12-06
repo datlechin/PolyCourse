@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex border-b pb-4 last:border-b-0">
+    <div class="flex pb-4 border-b last:border-b-0">
         <div class="mr-4">
             <Link :href="route('profile', { username: review.author.username })">
                 <img
