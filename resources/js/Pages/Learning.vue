@@ -13,9 +13,9 @@ defineProps({
 </script>
 
 <template>
-    <div class="grid grid-cols-4">
-        <div class="col-span-1">
-            <div class="fixed top-14 w-80">
+    <div class="grid md:grid-cols-4">
+        <div class="md:col-span-1">
+            <div class="md:fixed md:top-14 md:w-80">
                 <div class="py-3 px-5 font-semibold shadow">
                     Nội dung khoá học
                 </div>
@@ -39,13 +39,15 @@ defineProps({
                 </ul>
             </div>
         </div>
-        <div class="col-span-3">
-            <iframe :src="course.lesson.youtube_url" height="170%" width="100%" />
-            <div class="mx-20 my-8">
-                <h1 class="font-bold text-3xl">{{ course.lesson.name }}</h1>
-                <div class="text-sm text-gray-600 mt-2">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
-                <div class="prose mt-8">
-                    {{ course.lesson.content }}
+        <div class="-order-1 md:col-span-3 h-full">
+            <div>
+                <iframe class="w-full h-96 md:h-[500px]" :src="course.lesson.youtube_url"/>
+                <div class="mx-5 my-8 md:mx-20 md:my-8">
+                    <h1 class="font-bold text-2xl md:text-3xl">{{ course.lesson.name }}</h1>
+                    <div class="text-sm text-gray-600 mt-2">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
+                    <div class="prose mt-8">
+                        {{ course.lesson.content }}
+                    </div>
                 </div>
             </div>
         </div>
