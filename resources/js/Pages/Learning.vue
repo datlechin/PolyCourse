@@ -19,14 +19,14 @@ defineProps({
     <div class="grid grid-cols-4">
         <div class="col-span-1">
             <div class="fixed top-14 w-80">
-                <div class="py-3 px-5 font-semibold shadow">
+                <div class="px-5 py-3 font-semibold shadow">
                     Nội dung khoá học
                 </div>
-                <ul class="overflow-y-auto h-screen scrollbar">
+                <ul class="h-screen overflow-y-auto scrollbar">
                     <li
                         v-for="(lesson, index) in course.lessons"
                         :key="index"
-                        class="py-3 px-5 hover:bg-gray-200"
+                        class="px-5 py-3 hover:bg-gray-200"
                         :class="{ 'bg-gray-200': lesson.id === course.lesson.id }"
                     >
                         <Link :href="route('learning', { course: course.slug, lesson: lesson.id})">
@@ -46,9 +46,9 @@ defineProps({
         <div class="col-span-3">
             <iframe class="mx-auto" :src="course.lesson.youtube_url" height="480" width="99%" />
             <div class="mx-10 my-8">
-                <h1 class="font-bold text-3xl">{{ course.lesson.name }}</h1>
-                <div class="text-sm text-gray-600 mt-2">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
-                <div class="prose mt-8">
+                <h1 class="text-3xl font-bold">{{ course.lesson.name }}</h1>
+                <div class="mt-2 text-sm text-gray-600">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
+                <div class="mt-8 prose">
                     {{ course.lesson.content }}
                 </div>
                 <ReviewList :reviews="course.reviews" />
