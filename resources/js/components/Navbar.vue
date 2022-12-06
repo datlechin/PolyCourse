@@ -106,7 +106,7 @@ let mobileMenu = ref(false)
                         </div>
                         <hr>
                         <div class="flex flex-col my-4 space-y-3">
-                            <Link :href="route('home')" class="text-gray-500">
+                            <Link :href="route('settings')" class="text-gray-500">
                                 Thiết lập
                             </Link>
                             <Link :href="route('logout')" method="post" as="button" class="text-left text-gray-500">
