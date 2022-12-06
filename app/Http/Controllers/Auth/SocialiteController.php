@@ -14,13 +14,22 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
+    public function setConfig(string $provider)
+    {
+        config()->set('services.facebook.redirect', route('socialite.callback', $provider));
+    }
+
     public function redirect(string $provider): RedirectResponse
     {
+        $this->setConfig($provider);
+        
         return Socialite::driver($provider)->redirect();
     }
 
     public function callback(string $provider): RedirectResponse
     {
+        $this->setConfig($provider);
+
         $providerUser = Socialite::driver($provider)->user();
 
         $socialAccount = SocialAccount::firstOrNew(
