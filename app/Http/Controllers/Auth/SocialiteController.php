@@ -40,8 +40,8 @@ class SocialiteController extends Controller
         $user = User::updateOrCreate(
             ['email' => $providerUser->getEmail()],
             [
-                'name' => $providerUser->getName() ?: $providerUser->getEmail(),
-                'username' => $providerUser->getNickname(),
+                'name' => $providerUser->getName() ?? $providerUser->getEmail(),
+                'username' => $providerUser->getNickname() ?? $providerUser->getEmail(),
                 'avatar' => $providerUser->getAvatar(),
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make(Str::random(32)),
