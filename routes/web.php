@@ -55,7 +55,7 @@ Route::prefix('courses')->name('courses.')->group(function () {
 
 Route::prefix('learning-paths')->name('learning-paths.')->group(function () {
     Route::get('/', [LearningPathController::class, 'index'])->name('index');
-    Route::get('{slug}', [LearningPathController::class, 'show'])->name('show');
+    Route::get('{learningPath:slug}', [LearningPathController::class, 'show'])->name('show');
 });
 
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');

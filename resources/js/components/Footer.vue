@@ -10,7 +10,7 @@ import TwitterIcon from '@/icons/TwitterIcon.vue'
 
 <template>
     <footer class="bg-gray-900 px-7 pt-[68px] pb-10 text-gray-200 text-sm">
-        <div class="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-8 mx-0 md:mx-36">
+        <div class="grid grid-cols-1 gap-4 mx-0 lg:grid-cols-6 md:gap-8 md:mx-36">
             <div class="col-span-2">
                 <div class="flex items-center">
                     <Link :href="route('home')" class="mr-2.5">
@@ -18,7 +18,7 @@ import TwitterIcon from '@/icons/TwitterIcon.vue'
                     </Link>
                     <h2 class="font-bold">Học Lập Trình Để Đi Làm</h2>
                 </div>
-                <div class="my-4 text-gray-400 space-y-2">
+                <div class="my-4 space-y-2 text-gray-400">
                     <p>
                         Điện thoại:
                         <a href="tel:0123456789">0123456789</a>
@@ -34,35 +34,35 @@ import TwitterIcon from '@/icons/TwitterIcon.vue'
                 </div>
             </div>
             <div class="col-span-1">
-                <h2 class="font-bold text-lg uppercase">Về PolyCourse</h2>
-                <ul class="my-2 text-gray-400 space-y-2">
+                <h2 class="text-lg font-bold uppercase">Về PolyCourse</h2>
+                <ul class="my-2 space-y-2 text-gray-400">
                     <li>Giới thiệu</li>
                     <li>Cơ hội việc làm</li>
                 </ul>
             </div>
             <div class="col-span-1">
-                <h2 class="font-bold text-lg uppercase">Hỗ trợ</h2>
-                <ul class="my-2 text-gray-400 space-y-2">
+                <h2 class="text-lg font-bold uppercase">Hỗ trợ</h2>
+                <ul class="my-2 space-y-2 text-gray-400">
                     <li>Liên hệ</li>
                     <li>Bảo mật</li>
                     <li>Điều khoản</li>
                 </ul>
             </div>
             <div class="col-span-2">
-                <h2 class="font-bold text-lg uppercase">Công ty cổ phần PolyCourse</h2>
-                <ul class="my-2 text-gray-400 space-y-2">
+                <h2 class="text-lg font-bold uppercase">Công ty cổ phần PolyCourse</h2>
+                <ul class="my-2 space-y-2 text-gray-400">
                     <li>Ngày thành lập: 17/12/2022</li>
                     <li>Lĩnh vực: Công nghệ, giáo dục, lập trình. PolyCourse xây dựng và phát triển những sản phẩm mang lại giá trị cho cộng đồng.</li>
                 </ul>
             </div>
         </div>
-        <div class="block md:flex justify-between mt-12 mx-0 md:mx-36">
+        <div class="justify-between block mx-0 mt-12 md:flex md:mx-36">
             <div class="mb-8 md:mb-0">
                 <p class="text-gray-400">
                     {{ new Date().getFullYear() }} © {{ usePage().props.value.appName }}. Nền tảng học lập trình hàng đầu Việt Nam
                 </p>
             </div>
-            <div class="space-x-2 flex">
+            <div class="flex space-x-2">
                 <a href="" class="px-2 py-1 rounded-md">
                     <FacebookIcon class="w-4 h-4 text-blue-500" />
                 </a>

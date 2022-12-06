@@ -17,19 +17,19 @@ const subscribe = () => {
     <Head :title="course.name" />
     <div class="grid grid-cols-1 md:grid-cols-3">
         <div class="col-span-2 space-y-9">
-            <h1 class="text-4xl font-bold my-4">{{ course.name }}</h1>
+            <h1 class="my-4 text-4xl font-bold">{{ course.name }}</h1>
             <div v-if="course.subtitle">
                 {{ course.subtitle }}
             </div>
             <div v-if="course.learn_goals">
-                <h2 class="font-bold text-xl">Bạn sẽ học được gì?</h2>
-                <ul class="mt-3 flex items-center flex-wrap">
+                <h2 class="text-xl font-bold">Bạn sẽ học được gì?</h2>
+                <ul class="flex flex-wrap items-center mt-3">
                     <li
                         v-for="({ text }, index) in course.learn_goals"
                         :key="index"
-                        class="basis-1/2 flex items-center mb-4"
+                        class="flex items-center mb-4 basis-1/2"
                     >
-                        <CheckIcon class="mr-2 text-blue-500 w-4 h-4" />
+                        <CheckIcon class="w-4 h-4 mr-2 text-blue-500" />
                         <span v-text="text" />
                     </li>
                 </ul>
@@ -54,10 +54,10 @@ const subscribe = () => {
                         class="flex justify-between bg-gray-200 rounded-lg p-2.5 px-5"
                     >
                         <span class="flex items-center font-semibold">
-                            <PlayCircleIcon class="mr-2 text-blue-500 w-4 h-4" />
+                            <PlayCircleIcon class="w-4 h-4 mr-2 text-blue-500" />
                             {{ lesson.name }}
                         </span>
-                        <span class="text-gray-600 text-sm">
+                        <span class="text-sm text-gray-600">
                             {{ secondsToTime(lesson.time_duration) }}
                         </span>
                     </li>
@@ -71,24 +71,24 @@ const subscribe = () => {
                         :key="index"
                         class="flex items-center mb-3"
                     >
-                        <CheckIcon class="mr-2 text-blue-500 w-4 h-4" />
+                        <CheckIcon class="w-4 h-4 mr-2 text-blue-500" />
                         <span v-text="text" />
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="hidden md:block col-span-1 ml-10 mt-5">
+        <div class="hidden col-span-1 mt-5 ml-10 md:block">
             <div class="relative cursor-pointer">
                 <div
                     :style="`background-image: url(${course.thumbnail_url})`"
                     class="pt-[56%] bg-contain rounded-2xl"
                 />
                 <PlayCircleIcon class="w-16 h-16 text-white absolute inset-1/2 top-[32%] left-[40%]" />
-                <p class="absolute w-full text-center my-3 text-white font-semibold bottom-0">Xem giới thiệu khoá học</p>
+                <p class="absolute bottom-0 w-full my-3 font-semibold text-center text-white">Xem giới thiệu khoá học</p>
             </div>
-            <div class="text-center mt-5">
-                <h2 class="text-3xl text-blue-500 mb-4">{{ course.price === 0 ? 'Miễn phí' : priceFormat(course.price) }}</h2>
-                <button @click="subscribe" class="bg-blue-500 uppercase font-semibold text-white px-7 py-2 rounded-full hover:bg-blue-700">Đăng ký học</button>
+            <div class="mt-5 text-center">
+                <h2 class="mb-4 text-3xl text-blue-500">{{ course.price === 0 ? 'Miễn phí' : priceFormat(course.price) }}</h2>
+                <button @click="subscribe" class="py-2 font-semibold text-white uppercase bg-blue-500 rounded-full px-7 hover:bg-blue-700">Đăng ký học</button>
             </div>
             <div>
                 <ul class="mt-5 ml-16 space-y-3 text-sm">

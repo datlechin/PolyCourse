@@ -8,7 +8,7 @@ import Sidebar from './Sidebar.vue'
     <Header />
     <div class="flex mt-3">
         <Sidebar />
-        <main class="w-full px-6 md:px-20 mb-20">
+        <main class="w-full px-6 mb-20 md:px-20">
             <slot />
         </main>
     </div>
