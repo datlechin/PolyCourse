@@ -15,6 +15,11 @@ const subscribe = () => {
 
 <template>
     <Head :title="course.name" />
+    <div class="block md:hidden text-center fixed bottom-0 left-0 w-full">
+        <button class="bg-blue-500 uppercase w-full py-2 text-white">
+            Đăng ký học
+        </button>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3">
         <div class="col-span-2 space-y-9">
             <h1 class="my-4 text-4xl font-bold">{{ course.name }}</h1>
@@ -75,6 +80,11 @@ const subscribe = () => {
                         <span v-text="text" />
                     </li>
                 </ul>
+            </div>
+            <div class="block md:hidden text-center fixed bottom-0 left-0 w-full bg-white">
+                <button @click="subscribe" class="bg-blue-500 hover:bg-blue-600 uppercase w-11/12 my-2.5 py-2.5 text-white rounded-full">
+                    Đăng ký miễn phí
+                </button>
             </div>
         </div>
         <div class="hidden col-span-1 mt-5 ml-10 md:block">
