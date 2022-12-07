@@ -30,6 +30,6 @@ class Lesson extends Model
 
     protected function youtubeUrl(): Attribute
     {
-        return Attribute::get(fn () => "https://youtube.com/embed/$this->youtube_id");
+        return Attribute::get(fn () => "https://www.youtube-nocookie.com/embed/$this->youtube_id");
     }
 }
