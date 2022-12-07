@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\SocialAccount;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,13 +14,22 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
-    public function redirect(string $provider)
+    public function setConfig(string $provider)
     {
+        config()->set('services.facebook.redirect', route('socialite.callback', $provider));
+    }
+
+    public function redirect(string $provider): RedirectResponse
+    {
+        $this->setConfig($provider);
+        
         return Socialite::driver($provider)->redirect();
     }
 
-    public function callback(string $provider)
+    public function callback(string $provider): RedirectResponse
     {
+        $this->setConfig($provider);
+
         $providerUser = Socialite::driver($provider)->user();
 
         $socialAccount = SocialAccount::firstOrNew(

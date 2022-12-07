@@ -1,8 +1,8 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { ChevronRightIcon } from '@heroicons/vue/24/outline'
+import route from 'ziggy-js/src/js'
 import PostItem from '@/components/PostItem.vue'
-import route from "ziggy-js/src/js";
 
 defineProps({
     posts: Array,
@@ -12,13 +12,13 @@ defineProps({
 <template>
     <div>
         <div class="flex justify-between py-4">
-            <h2 class="font-bold text-2xl">Bài viết nổi bật</h2>
+            <h2 class="text-2xl font-bold">Bài viết nổi bật</h2>
             <Link :href="route('blog.index')" class="group flex items-center text-blue-500 font-semibold hover:underline hover:translate-x-0.5">
                 Xem tất cả
                 <ChevronRightIcon class="w-4 h-4 group-hover:translate-x-0.5" />
             </Link>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <PostItem
                 v-for="(post, index) in posts"
                 :key="index"

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -33,6 +35,7 @@ class Course extends Model implements HasMedia
     protected $appends = [
         'thumbnail_url',
         'total_time_duration',
+        'is_reviewed',
     ];
 
     public function category(): BelongsTo
@@ -65,6 +68,11 @@ class Course extends Model implements HasMedia
         return $this->belongsToMany(User::class)->withTimestamps();
     }
 
+    public function reviews(): MorphMany
+    {
+        return $this->morphMany(Review::class, 'reviewable');
+    }
+
     protected function thumbnailUrl(): Attribute
     {
         return Attribute::make(
@@ -76,6 +84,13 @@ class Course extends Model implements HasMedia
     {
         return Attribute::make(
             get: fn () => $this->lessons()->sum('time_duration')
+        );
+    }
+
+    protected function isReviewed(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->reviews()->where('user_id', Auth::id())->exists()
         );
     }
 

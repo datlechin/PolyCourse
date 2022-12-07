@@ -1,8 +1,8 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { ChevronRightIcon } from "@heroicons/vue/24/outline"
-import CourseItem from "@/components/CourseItem.vue";
-import route from "ziggy-js/src/js";
+import route from 'ziggy-js/src/js'
+import CourseItem from '@/components/CourseItem.vue'
 
 defineProps({
     courses: Array,
@@ -12,7 +12,7 @@ defineProps({
 <template>
     <div>
         <div class="flex justify-between">
-            <h2 class="font-bold text-2xl mb-3">Khoá học</h2>
+            <h2 class="mb-3 text-2xl font-bold">Khoá học</h2>
             <Link
                 v-if="!$page.component.startsWith('Courses')"
                 :href="route('courses.index')"
@@ -22,7 +22,7 @@ defineProps({
                 <ChevronRightIcon class="w-4 h-4 group-hover:translate-x-0.5" />
             </Link>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <CourseItem
                 v-for="(course, index) in courses"
                 :key="index"

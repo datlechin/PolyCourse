@@ -19,7 +19,7 @@ class LearningPath extends Model implements HasMedia
     ];
 
     protected $appends = [
-        'image_url'
+        'image_url',
     ];
 
     protected function imageUrl(): Attribute

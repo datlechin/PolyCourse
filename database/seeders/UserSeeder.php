@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -44,7 +45,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('123456'),
                 'phone' => fake()->e164PhoneNumber(),
                 'bio' => fake()->realText(),
-                'email_verified_at' => now(),
+                'email_verified_at' => Carbon::now(),
             ]);
         }
     }

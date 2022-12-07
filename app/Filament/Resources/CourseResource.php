@@ -77,9 +77,8 @@ class CourseResource extends Resource
                                         ->collection('courses')
                                         ->columnSpanFull(),
                                 ])
-                                ->columns()
+                                ->columns(),
                         ]),
-
 
                     Forms\Components\Wizard\Step::make('Kết quả học được')
                         ->schema([
@@ -94,7 +93,7 @@ class CourseResource extends Resource
                                                 ->required(),
                                         ])
                                         ->defaultItems(3)
-                                        ->createItemButtonLabel('Thêm dòng mới')
+                                        ->createItemButtonLabel('Thêm dòng mới'),
                                 ]),
                         ]),
 
@@ -163,7 +162,7 @@ class CourseResource extends Resource
 
                 Tables\Columns\BadgeColumn::make('price')
                     ->label('Giá')
-                    ->formatStateUsing(fn (int $state): string => $state === 0 ? 'Miễn phí' : number_format($state) . 'đ')
+                    ->formatStateUsing(fn (int $state): string => $state === 0 ? 'Miễn phí' : number_format($state).'đ')
                     ->colors([
                         'danger',
                         'success' => static fn ($state): bool => $state === 0,
