@@ -1,6 +1,6 @@
 <script setup>
 import { defineLayout, Link , Head } from '@inertiajs/vue3'
-import { PlayCircleIcon } from '@heroicons/vue/24/solid'
+import { PlayCircleIcon, ChevronRightIcon } from '@heroicons/vue/24/solid'
 import LearningLayout from '@/components/LearningLayout.vue'
 import route from 'ziggy-js/src/js'
 import { secondsToTime, dateFormat } from '@/helpers'
@@ -13,14 +13,14 @@ defineProps({
     lesson: Object,
 })
 </script>
-
 <template>
     <Head :title="course.lesson.name" />
     <div class="grid md:grid-cols-4">
         <div class="md:col-span-1">
-            <div class="w-full md:fixed md:top-14">
-                <div class="py-3 px-5 font-semibold shadow">
-                    Nội dung khoá học
+            <div class="w-full md:sticky md:top-14">
+                <div class="py-3 px-5 font-semibold shadow flex items-center justify-between">
+                    <span>Nội dung khoá học</span>
+                    <ChevronRightIcon class="block md:hidden h-6 w-6" />
                 </div>
                 <ul class="h-screen overflow-y-auto scrollbar">
                     <li
@@ -43,10 +43,10 @@ defineProps({
                 </ul>
             </div>
         </div>
-        <div class="-order-1 md:col-span-3">
+        <div class="-order-1 md:order-1 md:col-span-3">
             <div class="h-full">
-                <iframe class="md:h-[500px] w-full" :src="course.lesson.youtube_url" :title="course.lesson.name" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="mx-5 my-8 md:mx-20 md:my-8">
+                <iframe class="h-96 md:h-[500px] w-full" :src="course.lesson.youtube_url" :title="course.lesson.name" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="mx-5 my-5 md:mx-20 md:my-8">
                     <h1 class="font-bold text-2xl md:text-3xl">{{ course.lesson.name }}</h1>
                     <div class="text-sm text-gray-600 mt-2">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
                     <div class="prose mt-8">
