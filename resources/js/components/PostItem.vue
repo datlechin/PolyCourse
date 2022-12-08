@@ -9,8 +9,8 @@ defineProps({
 
 <template>
     <div>
-        <Link :href="route('blog.show', { slug: post.slug })">
-            <img :src="post.thumbnail_url" :alt="post.title" class="w-full h-36 rounded-2xl">
+        <Link :href="route('blog.show', { slug: post.slug }) ">
+            <img :src="post.thumbnail_url" :alt="post.title" class="object-fill w-85 h-48 rounded-2xl">
         </Link>
         <h3 class="mt-3 mb-2 font-semibold truncate">
             <Link :href="route('blog.show', { slug: post.slug })" v-text="post.title" />
