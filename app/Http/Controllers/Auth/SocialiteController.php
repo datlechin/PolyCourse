@@ -22,7 +22,7 @@ class SocialiteController extends Controller
     public function redirect(string $provider): RedirectResponse
     {
         $this->setConfig($provider);
-        
+
         return Socialite::driver($provider)->redirect();
     }
 
