@@ -10,7 +10,9 @@ class LearningPathController extends Controller
 {
     public function index(): Response
     {
-        $learningPaths = LearningPath::all();
+        $learningPaths = LearningPath::query()
+            ->with('media')
+            ->get();
 
         return Inertia::render('LearningPaths/Index', [
             'learningPaths' => $learningPaths,

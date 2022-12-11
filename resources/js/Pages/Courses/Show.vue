@@ -49,7 +49,7 @@ const subscribe = () => {
                         •
                     </li>
                     <li>
-                        Thời lượng <span class="font-bold">{{ secondsToTime(course.total_time_duration) }}</span>
+                        Thời lượng <span class="font-bold">{{ secondsToTime(course.lessons_time_duration) }}</span>
                     </li>
                 </ul>
                 <ul class="space-y-2">
@@ -119,7 +119,7 @@ const subscribe = () => {
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span class="ml-5 mr-1">Thời lượng</span>
-                        <span class="font-bold">{{ secondsToTime(course.total_time_duration)}}</span>
+                        <span class="font-bold">{{ secondsToTime(course.lessons_time_duration)}}</span>
                     </li>
                     <li class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
