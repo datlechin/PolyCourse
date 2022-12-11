@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -18,6 +20,9 @@ class LearningController extends Controller
             ->withWhereHas('lesson', function ($query) use ($lesson) {
                 $query->where('id', $lesson);
             })
+            ->withExists(['reviews as is_reviewed' => function (Builder $query) {
+                $query->where('user_id', Auth::id());
+            }])
             ->firstOrFail();
 
         return Inertia::render('Learning', [
