@@ -15,6 +15,11 @@ const subscribe = () => {
 
 <template>
     <Head :title="course.name" />
+    <div class="block md:hidden text-center fixed bottom-0 left-0 w-full">
+        <button class="bg-blue-500 uppercase w-full py-2 text-white">
+            Đăng ký học
+        </button>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3">
         <div class="col-span-2 space-y-9">
             <h1 class="my-4 text-4xl font-bold">{{ course.name }}</h1>
@@ -44,7 +49,7 @@ const subscribe = () => {
                         •
                     </li>
                     <li>
-                        Thời lượng <span class="font-bold">{{ secondsToTime(course.total_time_duration) }}</span>
+                        Thời lượng <span class="font-bold">{{ secondsToTime(course.lessons_time_duration) }}</span>
                     </li>
                 </ul>
                 <ul class="space-y-2">
@@ -75,6 +80,11 @@ const subscribe = () => {
                         <span v-text="text" />
                     </li>
                 </ul>
+            </div>
+            <div class="block md:hidden text-center fixed bottom-0 left-0 w-full bg-white">
+                <button @click="subscribe" class="bg-blue-500 hover:bg-blue-600 uppercase w-11/12 my-2.5 py-2.5 text-white rounded-full">
+                    Đăng ký miễn phí
+                </button>
             </div>
         </div>
         <div class="hidden col-span-1 mt-5 ml-10 md:block">
@@ -109,7 +119,7 @@ const subscribe = () => {
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span class="ml-5 mr-1">Thời lượng</span>
-                        <span class="font-bold">{{ secondsToTime(course.total_time_duration)}}</span>
+                        <span class="font-bold">{{ secondsToTime(course.lessons_time_duration)}}</span>
                     </li>
                     <li class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">

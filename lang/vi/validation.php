@@ -61,7 +61,7 @@ return [
     'ipv4' => 'Trường :attribute phải là một địa chỉ IPv4.',
     'ipv6' => 'Trường :attribute phải là một địa chỉ IPv6.',
     'json' => 'Trường :attribute phải là một chuỗi JSON.',
-    'lowercase' => 'The :attribute must be lowercase.',
+    'lowercase' => 'Trường :attribute phải là chữ thường.',
     'lt' => [
         'array' => 'Mảng :attribute phải có ít hơn :value phần tử.',
         'file' => 'Dung lượng trường :attribute phải nhỏ hơn :value kilobytes.',
@@ -111,7 +111,7 @@ return [
     'required' => 'Trường :attribute không được bỏ trống.',
     'required_array_keys' => 'Trường :attribute phải bao gồm các mục nhập cho: :values.',
     'required_if' => 'Trường :attribute không được bỏ trống khi trường :other là :value.',
-    'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
+    'required_if_accepted' => 'Trường :attribute không được bỏ trống khi :other được chấp nhận.',
     'required_unless' => 'Trường :attribute không được bỏ trống trừ khi :other là :values.',
     'required_with' => 'Trường :attribute không được bỏ trống khi một trong :values có giá trị.',
     'required_with_all' => 'Trường :attribute không được bỏ trống khi tất cả :values có giá trị.',
@@ -129,7 +129,7 @@ return [
     'timezone' => 'Trường :attribute phải là một múi giờ hợp lệ.',
     'unique' => 'Trường :attribute đã có trong cơ sở dữ liệu.',
     'uploaded' => 'Trường :attribute tải lên thất bại.',
-    'uppercase' => 'The :attribute must be uppercase.',
+    'uppercase' => 'Trường :attribute phải là chữ in hoa.',
     'url' => 'Trường :attribute không giống với định dạng một URL.',
     'uuid' => 'Trường :attribute phải là một chuỗi UUID hợp lệ.',
     'attributes' => [

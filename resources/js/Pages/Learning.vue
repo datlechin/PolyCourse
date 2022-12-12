@@ -16,10 +16,10 @@ defineProps({
 
 <template>
     <Head :title="course.lesson.name" />
-    <div class="grid grid-cols-4">
-        <div class="col-span-1">
-            <div class="fixed top-14 w-80">
-                <div class="px-5 py-3 font-semibold shadow">
+    <div class="grid md:grid-cols-4">
+        <div class="md:col-span-1">
+            <div class="w-full md:fixed md:top-14">
+                <div class="py-3 px-5 font-semibold shadow">
                     Nội dung khoá học
                 </div>
                 <ul class="h-screen overflow-y-auto scrollbar">
@@ -43,15 +43,17 @@ defineProps({
                 </ul>
             </div>
         </div>
-        <div class="col-span-3">
-            <iframe class="mx-auto" :src="course.lesson.youtube_url" height="480" width="99%" />
-            <div class="mx-10 my-8">
-                <h1 class="text-3xl font-bold">{{ course.lesson.name }}</h1>
-                <div class="mt-2 text-sm text-gray-600">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
-                <div class="mt-8 prose">
-                    {{ course.lesson.content }}
+        <div class="-order-1 md:col-span-3">
+            <div class="h-full">
+                <iframe class="md:h-[500px] w-full" :src="course.lesson.youtube_url" :title="course.lesson.name" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="mx-5 my-8 md:mx-20 md:my-8">
+                    <h1 class="font-bold text-2xl md:text-3xl">{{ course.lesson.name }}</h1>
+                    <div class="text-sm text-gray-600 mt-2">Cập nhật {{ dateFormat(course.lesson.updated_at) }}</div>
+                    <div class="prose mt-8">
+                        {{ course.lesson.content }}
+                    </div>
+                    <ReviewList :reviews="course.reviews" />
                 </div>
-                <ReviewList :reviews="course.reviews" />
             </div>
         </div>
     </div>
