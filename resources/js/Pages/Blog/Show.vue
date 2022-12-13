@@ -10,7 +10,7 @@ defineProps({
 
 <template>
     <Head :title="post.title" />
-    <div class="w-3/5 mx-auto">
+    <div class="w-full md:w-3/5 mx-auto">
         <h1 class="text-4xl font-bold my-7">{{ post.title }}</h1>
         <div class="flex items-center justify-between mb-7">
             <div class="flex">
