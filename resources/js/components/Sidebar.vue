@@ -32,7 +32,7 @@ const items = [
 </script>
 
 <template>
-    <div class="hidden px-3 md:block md:sticky md:top-20 md:self-start md:overflow-hidden">
+    <div class="hidden px-3 md:block md:sticky md:top-20 md:self-start md:overflow-hidden mb-12">
         <ul>
             <li
                 v-for="(item, index) in items"
