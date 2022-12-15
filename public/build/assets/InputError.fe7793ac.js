@@ -1,1 +1,0 @@
-import{o as t,c as s,t as n,s as o}from"./app.b826289b.js";const r=["textContent"],i={__name:"InputError",props:{message:String},setup(e){return(a,m)=>e.message?(t(),s("div",{key:0,textContent:n(e.message),class:"text-sm text-red-600 my-1.5 mx-0.5"},null,8,r)):o("",!0)}};export{i as _};
