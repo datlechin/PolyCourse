@@ -6,7 +6,6 @@ use App\Models\Course;
 use App\Models\CourseUser;
 use App\Models\Post;
 use App\Models\Review;
-use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;
 
