@@ -30,14 +30,17 @@ class UserResource extends Resource
 
                         Forms\Components\TextInput::make('username')
                             ->label('Tên đăng nhập')
+                            ->unique()
                             ->required(),
 
                         Forms\Components\TextInput::make('email')
                             ->label('Email')
+                            ->unique()
                             ->required(),
 
                         Forms\Components\TextInput::make('phone')
                             ->label('Số điện thoại')
+                            ->unique()
                             ->required(),
 
                         Forms\Components\Textarea::make('bio')
@@ -82,13 +85,6 @@ class UserResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array
