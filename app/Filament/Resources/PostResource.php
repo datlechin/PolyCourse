@@ -35,12 +35,14 @@ class PostResource extends Resource
                             ->label('Nguời đăng')
                             ->required()
                             ->relationship('author', 'name')
+                            ->preload()
                             ->searchable(),
 
                         Select::make('category_id')
                             ->label('Danh mục')
                             ->required()
                             ->relationship('category', 'name')
+                            ->preload()
                             ->searchable(),
 
                         TextInput::make('title')
