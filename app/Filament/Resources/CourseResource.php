@@ -89,10 +89,8 @@ class CourseResource extends Resource
                                         ->relationship()
                                         ->schema([
                                             Forms\Components\TextInput::make('text')
-                                                ->label('Nội dung')
-                                                ->required(),
+                                                ->label('Nội dung'),
                                         ])
-                                        ->defaultItems(3)
                                         ->createItemButtonLabel('Thêm dòng mới'),
                                 ]),
                         ]),
@@ -106,10 +104,8 @@ class CourseResource extends Resource
                                         ->relationship()
                                         ->schema([
                                             Forms\Components\TextInput::make('text')
-                                                ->label('Nội dung')
-                                                ->required(),
+                                                ->label('Nội dung'),
                                         ])
-                                        ->defaultItems(3)
                                         ->createItemButtonLabel('Thêm dòng mới'),
                                 ]),
                         ]),
